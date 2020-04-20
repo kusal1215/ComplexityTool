@@ -21,6 +21,12 @@
 </head>
 <body>
 
+<%
+		String val = (String) request.getAttribute("Value");
+		//ArrayList list = (ArrayList) request.getAttribute("List");
+		
+%>
+
 	<!--Navigation bar-->
 	<section id="nav-bar">
 		<nav class="navbar navbar-expand-lg navbar-light">
@@ -106,9 +112,9 @@
 				<div class="card-body text-primary">
 					<img class="image" src="image/4.jpg">
 
-					<form action="UserDecision" method="post">
+					<form action="ciservice" method="POST">
 						<button class="card border-info mb-3 border" type="submit"
-							name="submit" value=""
+							name="submit" value="<%=val%>"
 							style="text-decoration-style: solid; padding: 10px 70px 8px 70px; margin: 0 20px 0 10px">
 							<font color=" #007bff">INHERITANCE</font>
 						</button>
