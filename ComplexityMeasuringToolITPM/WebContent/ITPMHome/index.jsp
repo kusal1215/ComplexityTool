@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Hotel Management</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="ITPMHome/style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
@@ -41,7 +41,7 @@
         </section>
         <!-- Slider-->
        <!-- Start WOWSlider.com -->
-        <iframe src="wowslider.html" style="width:100%;height:100%;max-width:100%;overflow:visible;border:none;padding:0;margin:0 auto;display:inherit;" marginheight="0" marginwidth="0"></iframe>
+        <iframe src="ITPMHome/wowslider.html" style="width:100%;height:100%;max-width:100%;overflow:visible;border:none;padding:0;margin:0 auto;display:inherit;" marginheight="0" marginwidth="0"></iframe>
         <!-- End WOWSlider.com -->
 
                 <!--Event buttons-->
@@ -56,7 +56,7 @@
                     <div class="col-md-6 text r">
                        <h3 style="margin-top: 10px; font-family:'Sofia';">Click Here <img src="giphy.gif"></h3>
                       
-                        <a href="../CodeUpload.jsp" class="btn btn-success btn-lg" style="font-family:'Sofia'; font-weight:700; font-size: 25px;">Get Start</a>
+                        <a href="CodeUpload.jsp" class="btn btn-success btn-lg" style="font-family:'Sofia'; font-weight:700; font-size: 25px;">Get Start</a>
                     </div>  
                 </div>
             </div>
