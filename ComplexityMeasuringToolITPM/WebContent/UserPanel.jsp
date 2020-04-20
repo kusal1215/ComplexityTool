@@ -59,9 +59,9 @@
 				<div class="card-body text-primary">
 					<img class="image" src="image/2.jpg">
 
-					<form action="UserDecision" method="post">
+					<form action="SizeService" method="post">
 						<button class="card border-primary mb-3 border" type="submit"
-							name="submit" value=""
+							name="submit" value="<%=val%>"
 							style="text-decoration-style: solid; padding: 10px 70px 8px 70px; margin: 0 20px 0 10px">
 							<font color=" #007bff">SIZE</font>
 						</button>
@@ -75,9 +75,9 @@
 				<div class="card-body text-primary">
 					<img class="image" src="image/2.jpg">
 
-					<form action="UserDecision" method="post">
+					<form action="CVService" method="post">
 						<button class="card border-info mb-3 border" type="submit"
-							name="submit" value=""
+							name="submit" value="<%=val%>"
 							style="text-decoration-style: solid; padding: 10px 70px 8px 70px; margin: 0 20px 0 10px">
 							<font color=" #007bff">VARIABLES</font>
 						</button>
@@ -94,9 +94,9 @@
 				<div class="card-body text-primary">
 					<img class="image" src="image/3.jpg">
 
-					<form action="UserDecision" method="post">
+					<form action="CmService" method="post">
 						<button class="card border-success mb-3 border	" type="submit"
-							name="submit" value=""
+							name="submit" value="<%=val%>"
 							style="text-decoration-style: solid; padding: 10px 70px 8px 70px; margin: 0 20px 0 10px">
 							<font color=" #007bff">METHODS</font>
 						</button>

@@ -1,3 +1,5 @@
+<%@page import="java.util.*"%>
+<%@page import="model.SizeComplexity"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -42,6 +44,12 @@
             </nav>   
         </section>
     
+    <%
+		String val = (String) request.getAttribute("Value");
+		ArrayList<SizeComplexity> list = (ArrayList) request.getAttribute("List");
+		//ArrayList list2 = (ArrayList) request.getAttribute("List2");
+	%>
+    
      <section id="background" style="">
      <h1>Size</h1> 
 
@@ -59,43 +67,29 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                  
-                                  <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
+        <%
+			//if ((list != null)&&(list2 != null)) {
+			if ((list != null)) {
+	
+				for (int i = 0; i < list.size(); i++) {
+		%>
+
+		<tr>
+		
+			 <td width="119"><%=i+1%></td>
+			 <td width="119"><%=list.get(i).getLine()%></td>
+			 <td width="119"><%=list.get(i).getNumofkeywords()%></td>
+			 <td width="119"><%=list.get(i).getNumofidenty()%></td>
+			 <td width="119"><%=list.get(i).getNumofop()%></td>
+			 <td width="119"><%=list.get(i).getNumofNumaric()%></td>
+			  <td width="119"><%=list.get(i).getNumofstring()%></td>
+			 <td width="119"><%=list.get(i).getCountComplexity()%></td>
+		</tr>
+
+		<%
+					 }
+			}
+		%>
               </tbody>
           </table>
         
