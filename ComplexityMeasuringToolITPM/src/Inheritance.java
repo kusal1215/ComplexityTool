@@ -34,7 +34,7 @@ public class Inheritance {
 			for (int r = 0; r < wordsForVariables.length; r++) {
 				
 
-				if (wordsForVariables.length == 5) {
+				if (wordsForVariables.length == 5 || wordsForVariables.length == 4) {
 					System.out.println("5iiiiii");
 					
 
@@ -115,7 +115,82 @@ public class Inheritance {
 						}
 						
 						
-					}else {
+					}
+					else if (wordsForVariables[r].contains("class") && wordsForVariables[r + 2].contains("extends")) {			
+						
+						String indexOfBrack = wordsForVariables[r + 3].replaceAll("\\{","");// catch the index after the barcketss byindexOf rami
+						System.out.println(indexOfBrack);
+						System.out.println("{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{");
+						
+						child = wordsForVariables[r + 1];
+						//InirectInheritanceList.add(child);
+						System.out.println(wordsForVariables[r + 1]);
+						//derectCi = derectCi + 1;
+						//inheritanceComplexity.setDirect(derectCi);
+												
+						//complexity = complexity + derectCi;
+					
+						System.out.println(InirectInheritanceList);
+						System.out.println("child xxxxxxxxxxxxxxxx");
+
+						parent = indexOfBrack;
+						//DirectInheritanceList.add(parent);
+						System.out.println(indexOfBrack);
+						
+						System.out.println(DirectInheritanceList);
+						System.out.println("parent xxxxxxxxxxxxxxxx");
+						
+						inheritanceComplexity.setLine(parent);
+						for (int j = 0; j < line.size(); j++) {
+							
+							//setting the line to the model class object
+						//	inheritanceComplexity.setLine(line.get(i));
+									
+							String[] words = line.get(j).split(" ");
+							for (int p = 0; p < words.length; p++) {
+									
+									if (words.length == 4) {
+										
+										if (words[p].contains("class") && words[p + 2].contains("extends")) {
+											
+										
+													String SecondindexOfBrackTwo = words[p + 3].replaceAll("\\{","");// catch the index after the barcketss byindexOf rami
+													System.out.println(SecondindexOfBrackTwo);
+													System.out.println("{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{");
+													
+														
+														
+														if(SecondindexOfBrackTwo.contains(parent) ) {
+															derectCi = derectCi + 1;
+															inheritanceComplexity.setDirect(derectCi);
+															//complexity =  complexity + derectCi;
+															System.out.println("direct parent second loop in........");
+														}
+														
+														else if( SecondindexOfBrackTwo.contains(child)) {
+															InderectCi = InderectCi + 1;
+															inheritanceComplexity.setInditect(InderectCi);
+															//complexity =  complexity + InderectCi ;
+															System.out.println("indirect parent second loop in else if........");
+							
+																
+														}else {
+															totalCi =  totalCi + 0;
+														}
+														
+												
+										}
+									}else {
+										totalCi = totalCi + 0;
+									}
+											
+								}
+							
+						}
+						
+						
+					}
+					else {
 						
 						totalCi = totalCi + 0;
 						System.out.println("else......public class.........");
