@@ -172,8 +172,7 @@ public class RegularMethods {
 
 						if (linesCHECK.contains(methodSet.get(j2))) {
 							// testing2.add(linesCHECK);
-							System.out.println(b
-									+ "PISSI MU PISSI MU PISSU PUSI MUUUUUUU.................HAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAHAAAAAAA");
+							
 
 							var = linesCHECK.split(" ");
 							for (int j3 = 0; j3 < var.length; j3++) {
@@ -238,8 +237,7 @@ public class RegularMethods {
 
 								if (linesCHECK.contains(methodSet.get(j2))) {
 									// testing2.add(linesCHECK);
-									System.out.println(b
-											+ "PISSI MU PISSI MU PISSU PUSI MUUUUUUU.................HAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAHAAAAAAA");
+									
 
 									
 									var = linesCHECK.split(" ");
@@ -299,9 +297,9 @@ public class RegularMethods {
 
 			NUMBER = NUMBER + 1;
 
-			if (hashNmcms.containsKey(NUMBER) == true) {
-				testingNmcmsList.add(hashNmcms.get(NUMBER));
-				System.out.println(hashNmcms.get(NUMBER));
+			if (hashNmcms.containsKey(i) == true) {
+				testingNmcmsList.add(hashNmcms.get(i));
+				System.out.println(hashNmcms.get(i));
 			} else {
 				testingNmcmsList.add(0);
 			}
@@ -489,8 +487,7 @@ public class RegularMethods {
 
 						if (linesCHECK.contains(recursivelist.get(j2))) {
 							// testing2.add(linesCHECK);
-							System.out.println(b
-									+ "PISSI MU PISSI MU PISSU PUSI MUUUUUUU.................HAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAHAAAAAAA");
+							
 
 							var = linesCHECK.split(" ");
 							for (int j3 = 0; j3 < var.length; j3++) {
@@ -555,9 +552,7 @@ public class RegularMethods {
 
 								if (linesCHECK.contains(recursivelist.get(j2))) {
 									// testing2.add(linesCHECK);
-									System.out.println(b
-											+ "PISSI MU PISSI MU PISSU PUSI MUUUUUUU.................HAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAHAAAAAAA");
-
+									
 									var = linesCHECK.split(" ");
 									for (int j3 = 0; j3 < var.length; j3++) {
 										System.out.println(var[j3]);
@@ -575,7 +570,7 @@ public class RegularMethods {
 									Nmcrms = 0;
 									TemporyNmcrmsLineBucket = b + 1;
 									hashNmcrms.put(TemporyNmcrmsLineBucket, TemporyNmcrmsBucket);
-									System.out.println("BREAK ++++++++++++++++++++");
+									
 									break;
 								}
 							}
