@@ -63,6 +63,7 @@
 	ArrayList Wrmcrms = (ArrayList) request.getAttribute("Wrmcrms");
 	ArrayList Nmcrms = (ArrayList) request.getAttribute("Nmcrms");
 	ArrayList Wmcrms = (ArrayList) request.getAttribute("Wmcrms");
+	ArrayList Ccp = (ArrayList) request.getAttribute("Ccp");
 	ArrayList Nmcrmd = (ArrayList) request.getAttribute("Different");
 	%>
 
@@ -134,9 +135,15 @@
 
 						<td width="60"><%=Nmcrms.get(i)%></td>
 						<%-- <td width="119"><%=Wmcrms.get(i)%></td> --%>
+						
 						<td width="60"><%=Nmcrmd.get(i)%></td>
-
+						<td width="60"><%=Nmcrmd.get(i)%></td>
+						<td width="60"><%=Nmcrmd.get(i)%></td>
+						<td width="60"><%=Nmcrmd.get(i)%></td>
+						<td width="60"><%=Nmcrmd.get(i)%></td>
 						<%-- <td width="119"><%=lines.get(i)%></td> --%>
+						
+						<td width="60"><%=Ccp.get(i)%></td>
 
 
 					</tr>

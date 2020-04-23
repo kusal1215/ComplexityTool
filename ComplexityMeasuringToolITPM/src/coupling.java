@@ -215,4 +215,28 @@ public class coupling {
 		}
 		return Wr;
 	}
+	
+	
+	public static ArrayList<Integer> Ccp(ArrayList<String> method, ArrayList<Integer> testingNrList, 
+			ArrayList<Integer> testingWrList, ArrayList<Integer> testingNmcmsList, 
+			ArrayList<Integer> testingWmcmsList,  ArrayList<Integer> testingNrmcmsList, 
+			ArrayList<Integer> testingWrmcmsList, ArrayList<Integer> testingNrmcrmsList, 
+			ArrayList<Integer> testingWrmcrmsList,ArrayList<Integer> testingNmcrmsList,
+			ArrayList<Integer> testingWmcrmsList) {
+
+		int Ccp = 0;
+		ArrayList<Integer> TestingCcpList = new ArrayList<Integer>();
+		for (int i = 0; i < method.size(); i++) {
+
+			Ccp = (testingNrList.get(i) * testingWrList.get(i)) + (testingNmcmsList.get(i) * 
+					testingWmcmsList.get(i)) + (testingNrmcmsList.get(i) * testingWrmcmsList.get(i))
+					+ (testingNrmcrmsList.get(i) * testingWrmcrmsList.get(i)) + (testingNmcrmsList.get(i) * 
+					testingWmcrmsList.get(i));
+			TestingCcpList.add(Ccp);
+		}
+
+		return TestingCcpList;
+	}
+	
+	
 }
