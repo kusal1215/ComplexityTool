@@ -149,9 +149,9 @@
 				<div class="card-body text-primary">
 					<img class="image" src="image/2.jpg">
 
-					<form action="UserDecision" method="post">
+					<form action="ControlStructureService" method="post">
 						<button class="card border-info mb-3 border" type="submit"
-							name="submit" value=""
+							name="submit" value="<%=val %>"
 							style="text-decoration-style: solid; padding: 10px 20px 8px 20px; margin: 0 20px 0 5px">
 							<font color=" #007bff">CONTROL STRUCTURE</font>
 						</button>
@@ -168,7 +168,7 @@
 				<div class="card-body text-primary">
 					<img class="image" src="image/1.jpg">
 
-					<form action="UserDecision" method="post">
+					<form action="" method="post">
 						<button class="card border-danger mb-3 border" type="submit"
 							name="submit" value=""
 							style="text-decoration-style: solid; padding: 10px 70px 8px 70px; margin: 0 20px 0 10px">
