@@ -123,6 +123,20 @@ public class CouplingService extends HttpServlet {
 
 		ArrayList<Integer> Wmcrms = new ArrayList<Integer>();
 		Wmcrms = RegularMethods.Wmcrms(Nmcrms);
+		
+		
+		/*
+		 * 
+		 * Call Ccp
+		 * 
+		 */
+		ArrayList<Integer> Ccp = new ArrayList<Integer>();
+		Ccp = coupling.Ccp(list,Nr, Wr, Nmcms, Wmcms, Nrmcms, Wrmcms, Nrmcrms, Wrmcrms, Nmcrms, Wmcrms);
+		System.out.println("Size of the ccp list" + Ccp.size());
+
+		
+		
+		
 
 		/*		
 		*
@@ -152,6 +166,8 @@ public class CouplingService extends HttpServlet {
 
 		request.setAttribute("Nmcrms", Nmcrms);
 		request.setAttribute("Wmcrms", Wmcrms);
+		
+		request.setAttribute("Ccp", Ccp);
 		
 		request.setAttribute("Different", Nmcrmd);
 

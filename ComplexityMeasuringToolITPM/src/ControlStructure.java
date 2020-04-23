@@ -602,7 +602,7 @@ public class ControlStructure {
 		ArrayList<Integer> TestingCcsList = new ArrayList<Integer>();
 		for (int i = 0; i < method.size(); i++) {
 
-			Ccs = testingCcsppList.get(i) + testingNcList.get(i) + testingWtcsList.get(i);
+			Ccs = testingCcsppList.get(i) + (testingNcList.get(i) * testingWtcsList.get(i));
 			TestingCcsList.add(Ccs);
 		}
 
