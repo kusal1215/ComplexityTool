@@ -179,8 +179,7 @@ public class RegularMethods {
 							for (int j3 = 0; j3 < var.length; j3++) {
 								System.out.println(var[j3]);
 
-								if (var[j3].contains(methodSet.get(j2))
-										|| var[j3].contains(methodSet.get(j2).split(" ")[1])) {
+								if (var[j3].contains(methodSet.get(j2))) {
 									Nmcms = Nmcms + 1;
 
 								}
