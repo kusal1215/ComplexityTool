@@ -140,7 +140,7 @@ public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<St
 //                	 System.out.println(countComplexity);
 //                	 
                 }//java keywords
-                if (words[r].contains("new") || words[r].contains("delete") || words[r].contains("throw") || words[r].contains("throws")) {
+                if (words[r].contains("new") || words[r].contains("delete") || words[r].contains("throw") || words[r].contains("throws") || words[r].contains("break") || words[r].contains("continue")) {
                    // countComplexity = countComplexity + 1;
                 	 numofkeywords = numofkeywords+ 1;
                 	 //countComplexity = (numofkeywords *1);
