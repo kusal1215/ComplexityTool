@@ -99,7 +99,7 @@
 
 						<th scope="col">Nrmrgvd</th>
 
-						<th scope="col">cc</th>
+						<th scope="col">Ccp</th>
 					</tr>
 				</thead>
 				<tbody>

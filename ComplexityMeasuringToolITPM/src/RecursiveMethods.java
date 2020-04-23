@@ -171,9 +171,7 @@ public class RecursiveMethods {
 
 								if (linesCHECK.contains(methodSet.get(j2))) {
 									// testing2.add(linesCHECK);
-									System.out.println(b
-											+ "PISSI MU PISSI MU PISSU PUSI MUUUUUUU.................HAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAHAAAAAAA");
-
+									
 									var = linesCHECK.split(" ");
 									for (int j3 = 0; j3 < var.length; j3++) {
 										System.out.println(var[j3]);
@@ -419,8 +417,7 @@ public class RecursiveMethods {
 
 								if (linesCHECK.contains(recursivelist.get(j2))) {
 									// testing2.add(linesCHECK);
-									System.out.println(b
-											+ "PISSI MU PISSI MU PISSU PUSI MUUUUUUU.................HAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAHAAAAAAA");
+								
 
 									var = linesCHECK.split(" ");
 									for (int j3 = 0; j3 < var.length; j3++) {
