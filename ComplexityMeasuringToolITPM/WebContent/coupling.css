@@ -50,6 +50,12 @@
     font-size: 16px;
 }
 
+#table{
+	justify-content:center;
+	align-items: center;
+
+}
+
 /*background*/
 #background
 {
@@ -60,8 +66,7 @@
     background-attachment: fixed;
     padding-top: 50px;
     padding-bottom: 50px;
-    
-    padding: 100px;
+   	padding: 100px;
 }
 
 #background h1
@@ -90,3 +95,5 @@
     color: #fff;
     padding: 12px;
 }
+
+

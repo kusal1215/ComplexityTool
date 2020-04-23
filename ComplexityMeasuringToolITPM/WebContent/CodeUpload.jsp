@@ -96,11 +96,14 @@
 									Browse Your <big style="color: red;">File</big> Here <img
 										src="giphy.gif" style="height: 60px;">
 								</h2>
+								<br>
 
 								<form action="codeContent" method="post"
 									enctype="multipart/form-data">
 									<!--  <input type="text" name="description" /> -->
-									<input type="file" name="file" /> <input type="submit" />
+									<input type="file" name="file" class="btn btn-primary"
+										style="margin-left: 50px;" /> <input type="submit"
+										class="btn btn-success" />
 								</form>
 							</div>
 						</div>
@@ -137,12 +140,14 @@
 									style="margin-top: 30px; font-family: 'Sofia'; text-align: center">
 									Browse Your <big style="color: red;">File</big> Here <img
 										src="giphy.gif" style="height: 60px;">
-								</h2>
+								</h2><br>
 
 								<form action="codeContent" method="post"
 									enctype="multipart/form-data">
 									<!--  <input type="text" name="description" /> -->
-									<input type="file" name="file" /> <input type="submit" />
+									<input type="file" name="file" class="btn btn-primary"
+										style="margin-left: 50px;" /> <input type="submit"
+										class="btn btn-success" />
 								</form>
 							</div>
 						</div>
