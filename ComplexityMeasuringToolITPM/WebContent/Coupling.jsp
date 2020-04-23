@@ -68,83 +68,83 @@
 
 	<section id="background" style="">
 		<h1>Coupling</h1>
+		<div id="table" style="overflow-x: auto;">
+			<table class="table table-striped table-dark"
+				style="margin-top: 40px;">
+				<thead>
+					<tr>
+						<th scope="col">Line No</th>
+						<th scope="col">Program Statements</th>
+						<th scope="col">Nr</th>
+						<th scope="col">Nmcms</th>
 
-		<table class="table table-striped table-dark"
-			style="margin-top: 40px;">
-			<thead>
-				<tr>
-					<th scope="col">Line No</th>
-					<th scope="col">Program Statements</th>
-					<th scope="col">Nr</th>
-					<th scope="col">Nmcms</th>
+						<th scope="col">Nmcmd</th>
 
-					<th scope="col">Nmcmd</th>
+						<th scope="col">Nmcrms</th>
 
-					<th scope="col">Nmcrms</th>
+						<th scope="col">Nmcrmd</th>
+						<th scope="col">Nrmcrms</th>
 
-					<th scope="col">Nmcrmd</th>
-					<th scope="col">Nrmcrms</th>
+						<th scope="col">Nrmcrmd</th>
 
-					<th scope="col">Nrmcrmd</th>
+						<th scope="col">Nrmcms</th>
 
-					<th scope="col">Nrmcms</th>
+						<th scope="col">Nrmcmd</th>
 
-					<th scope="col">Nrmcmd</th>
+						<th scope="col">Nrmrgvs</th>
 
-					<th scope="col">Nrmrgvs</th>
+						<th scope="col">Nmrgvd</th>
 
-					<th scope="col">Nmrgvd</th>
+						<th scope="col">Nrmrgvs</th>
 
-					<th scope="col">Nrmrgvs</th>
+						<th scope="col">Nrmrgvd</th>
 
-					<th scope="col">Nrmrgvd</th>
+						<th scope="col">cc</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+						if (lines != null) {
 
-					<th scope="col">cc</th>
-				</tr>
-			</thead>
-			<tbody>
-				<%
-					if (lines != null) {
-
-					for (int i = 0; i < lines.size(); i++) {
-				%>
-
-
-				<tr>
-
-					<td width="119"><%=line.get(i)%></td>
-
-					<td width="119"><%=lines.get(i)%></td>
-
-					<td width="119"><%=Nr.get(i)%></td>
-					<%-- <td width="119"><%=Wr.get(i)%></td> --%>
-
-					
-					<td width="119"><%=Nmcms.get(i)%></td>
-					<%-- <td width="119"><%=Wmcms.get(i)%></td> --%>
-					<td width="119"><%=Nmcrmd.get(i)%></td>
-
-					<td width="119"><%=Nrmcms.get(i)%></td>
-					<%-- <td width="119"><%=Wrmcms.get(i)%></td> --%>
-					<td width="119"><%=Nmcrmd.get(i)%></td>
-
-					<td width="119"><%=Nrmcrms.get(i)%></td>
-					<%-- <td width="119"><%=Wrmcrms.get(i)%></td> --%>
-					<td width="119"><%=Nmcrmd.get(i)%></td>
-
-					<td width="119"><%=Nmcrms.get(i)%></td>
-					<%-- <td width="119"><%=Wmcrms.get(i)%></td> --%>
-					<td width="119"><%=Nmcrmd.get(i)%></td>
-
-					<%-- <td width="119"><%=lines.get(i)%></td> --%>
+						for (int i = 0; i < lines.size(); i++) {
+					%>
 
 
-				</tr>
-				<%
+					<tr>
+
+						<td width="60"><%=line.get(i)%></td>
+
+						<td width="60"><%=lines.get(i)%></td>
+
+						<td width="60"><%=Nr.get(i)%></td>
+						<%-- <td width="119"><%=Wr.get(i)%></td> --%>
+
+
+						<td width="60"><%=Nmcms.get(i)%></td>
+						<%-- <td width="119"><%=Wmcms.get(i)%></td> --%>
+						<td width="60"><%=Nmcrmd.get(i)%></td>
+
+						<td width="60"><%=Nrmcms.get(i)%></td>
+						<%-- <td width="119"><%=Wrmcms.get(i)%></td> --%>
+						<td width="60"><%=Nmcrmd.get(i)%></td>
+
+						<td width="60"><%=Nrmcrms.get(i)%></td>
+						<%-- <td width="119"><%=Wrmcrms.get(i)%></td> --%>
+						<td width="60"><%=Nmcrmd.get(i)%></td>
+
+						<td width="60"><%=Nmcrms.get(i)%></td>
+						<%-- <td width="119"><%=Wmcrms.get(i)%></td> --%>
+						<td width="60"><%=Nmcrmd.get(i)%></td>
+
+						<%-- <td width="119"><%=lines.get(i)%></td> --%>
+
+
+					</tr>
+					<%
+						}
 					}
-				}
-				%>
-				<!-- <tr>
+					%>
+					<!-- <tr>
 					<th scope="row">1</th>
 					<td>Mark</td>
 					<td>Otto</td>
@@ -183,8 +183,9 @@
 				</tr>
 				
  -->
-			</tbody>
-		</table>
+				</tbody>
+			</table>
+		</div>
 
 	</section>
 
