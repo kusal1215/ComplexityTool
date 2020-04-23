@@ -69,45 +69,45 @@
 
 	<section id="background" style="">
 		<h1>Control Structure</h1>
-
-		<table class="table table-striped table-dark"
-			style="margin-top: 40px;">
-			<thead>
-				<tr>
-					<th scope="col">Line No</th>
-					<th scope="col">Program Statements</th>
-					<th scope="col">Wtcs</th>
-					<th scope="col">Nic</th>
-					<th scope="col">Ccspps</th>
-					<th scope="col">Ccs</th>
-				</tr>
-			</thead>
-			<tbody>
-
-
-				<%
-					if (list != null) {
-
-					for (int i = 0; i < list.size(); i++) {
-				%>
+		<div id="table" style="overflow-x: auto;">
+			<table class="table table-striped table-dark"
+				style="margin-top: 40px;">
+				<thead>
+					<tr>
+						<th scope="col">Line No</th>
+						<th scope="col">Program Statements</th>
+						<th scope="col">Wtcs</th>
+						<th scope="col">Nic</th>
+						<th scope="col">Ccspps</th>
+						<th scope="col">Ccs</th>
+					</tr>
+				</thead>
+				<tbody>
 
 
-				<tr>
+					<%
+						if (list != null) {
 
-					<td width="119"><%=lineNum.get(i)%></td>
-					<td width="119"><%=list.get(i)%></td>
-					<td width="119"><%=Wtcs.get(i)%></td>
-					<td width="119"><%=Nc.get(i)%></td>
-					<td width="119"><%=Ccspps.get(i)%></td>
-					<td width="119"><%=Ccs.get(i)%></td>
-				</tr>
+						for (int i = 0; i < list.size(); i++) {
+					%>
 
-				<%
+
+					<tr>
+
+						<td width="119"><%=lineNum.get(i)%></td>
+						<td width="119"><%=list.get(i)%></td>
+						<td width="119"><%=Wtcs.get(i)%></td>
+						<td width="119"><%=Nc.get(i)%></td>
+						<td width="119"><%=Ccspps.get(i)%></td>
+						<td width="119"><%=Ccs.get(i)%></td>
+					</tr>
+
+					<%
+						}
 					}
-				}
-				%>
+					%>
 
-				<!-- <tr>
+					<!-- <tr>
                   <th scope="row">1</th>
                   <td>Mark</td>
                   <td>Otto</td>
@@ -144,8 +144,9 @@
                   <td>the Bird</td>
                   <td>@twitter</td>
                 </tr> -->
-			</tbody>
-		</table>
+				</tbody>
+			</table>
+		</div>
 
 	</section>
 

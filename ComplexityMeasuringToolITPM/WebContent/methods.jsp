@@ -1,5 +1,5 @@
 <%@page import="java.util.*"%>
-<%@ page import="model.MethodsComplexity" %>
+<%@ page import="model.MethodsComplexity"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -46,54 +46,55 @@
 			</div>
 		</nav>
 	</section>
-	
-		<%
+
+	<%
 		String val = (String) request.getAttribute("Value");
-		ArrayList<MethodsComplexity> list = (ArrayList) request.getAttribute("List");
-		//ArrayList list2 = (ArrayList) request.getAttribute("List2");
+	ArrayList<MethodsComplexity> list = (ArrayList) request.getAttribute("List");
+	//ArrayList list2 = (ArrayList) request.getAttribute("List2");
 	%>
 
 	<section id="background" style="">
 		<h1>Methods</h1>
+		<div id="table" style="overflow-x: auto;">
+			<table class="table table-striped table-dark"
+				style="margin-top: 40px;">
+				<thead>
+					<tr>
+						<th scope="col">Line No</th>
+						<th scope="col">Program Statement</th>
+						<th scope="col">Wmrt</th>
+						<th scope="col">Npdtp</th>
+						<th scope="col">Nedtp</th>
+						<th scope="col">Cm</th>
+					</tr>
+				</thead>
+				<tbody>
+					</tr>
 
-		<table class="table table-striped table-dark"
-			style="margin-top: 40px;">
-			<thead>
-				<tr>
-					<th scope="col">Line No</th>
-					<th scope="col">Program Statement</th>
-					<th scope="col">Wmrt</th>
-					<th scope="col">Npdtp</th>
-					<th scope="col">Nedtp</th>
-					<th scope="col">Cm</th>
-				</tr>
-			</thead>
-			<tbody>
-				</tr>
+					<%
+						//if ((list != null)&&(list2 != null)) {
+					if ((list != null)) {
 
-				<%
-					//if ((list != null)&&(list2 != null)) {
-				if ((list != null)) {
+						for (int i = 0; i < list.size(); i++) {
+					%>
 
-					for (int i = 0; i < list.size(); i++) {
-				%>
+					<tr>
 
-				<tr>
+						<td width="119"><%=i + 1%></td>
+						<td width="119"><%=list.get(i).getLine()%></td>
+						<td width="119"><%=list.get(i).getWmrt()%></td>
+						<td width="119"><%=list.get(i).getNpdtp()%></td>
+						<td width="119"><%=list.get(i).getNedtp()%></td>
+						<td width="119"><%=list.get(i).getCm()%></td>
+					</tr>
 
-					<td width="119"><%=i + 1%></td>
-					<td width="119"><%=list.get(i).getLine()%></td>
-					<td width="119"><%=list.get(i).getWmrt()%></td>
-					<td width="119"><%=list.get(i).getNpdtp()%></td>
-					<td width="119"><%=list.get(i).getNedtp()%></td>
-					<td width="119"><%=list.get(i).getCm()%></td>
-				</tr>
-
-				<%
+					<%
+						}
 					}
-				}
-				%>
-			</tbody>
-		</table>
+					%>
+				</tbody>
+			</table>
+		</div>
 
 	</section>
 
