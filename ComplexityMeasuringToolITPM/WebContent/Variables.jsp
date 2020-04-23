@@ -57,44 +57,45 @@
 
 	<section id="background" style="">
 		<h1>Variables</h1>
+		<div id="table" style="overflow-x: auto;">
+			<table class="table table-striped table-dark"
+				style="margin-top: 40px;">
+				<thead>
+					<tr>
+						<th scope="col">Line No</th>
+						<th scope="col">Program Statements</th>
+						<th scope="col">wvs</th>
+						<th scope="col">Npdtv</th>
+						<th scope="col">Ncdtv</th>
+						<th scope="col">Cv</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+						//if ((list != null)&&(list2 != null)) {
+					if ((list != null)) {
 
-		<table class="table table-striped table-dark"
-			style="margin-top: 40px;">
-			<thead>
-				<tr>
-					<th scope="col">Line No</th>
-					<th scope="col">Program Statements</th>
-					<th scope="col">wvs</th>
-					<th scope="col">Npdtv</th>
-					<th scope="col">Ncdtv</th>
-					<th scope="col">Cv</th>
-				</tr>
-			</thead>
-			<tbody>
-				<%
-					//if ((list != null)&&(list2 != null)) {
-				if ((list != null)) {
+						for (int i = 0; i < list.size(); i++) {
+					%>
 
-					for (int i = 0; i < list.size(); i++) {
-				%>
+					<tr>
 
-				<tr>
+						<td width="119"><%=i + 1%></td>
+						<td width="119"><%=list.get(i).getLine()%></td>
+						<td width="119"><%=list.get(i).getWvs()%></td>
+						<td width="119"><%=list.get(i).getPrimitive_variable()%></td>
+						<td width="119"><%=list.get(i).getComposite_variable()%></td>
+						<td width="119"><%=list.get(i).getComplexity()%></td>
 
-					<td width="119"><%=i + 1%></td>
-					<td width="119"><%=list.get(i).getLine()%></td>
-					<td width="119"><%=list.get(i).getWvs()%></td>
-					<td width="119"><%=list.get(i).getPrimitive_variable()%></td>
-					<td width="119"><%=list.get(i).getComposite_variable()%></td>
-					<td width="119"><%=list.get(i).getComplexity()%></td>
+					</tr>
 
-				</tr>
-
-				<%
+					<%
+						}
 					}
-				}
-				%>
-			</tbody>
-		</table>
+					%>
+				</tbody>
+			</table>
+		</div>
 
 	</section>
 
