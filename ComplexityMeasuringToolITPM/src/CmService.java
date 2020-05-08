@@ -40,8 +40,21 @@ public class CmService extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String value = request.getParameter("submit");
+		String value = request.getParameter("userId");
 		System.out.println(value);
+		System.out.println("xxxxxxxxxxxxxxxxxxx");
+		
+		int primitivereturntype = Integer.parseInt(request.getParameter("primitivereturntype"));
+		int compositereturntype = Integer.parseInt(request.getParameter("compositereturntype"));
+		int voidreturntype = Integer.parseInt(request.getParameter("voidreturntype"));
+		int Primitiveparameter = Integer.parseInt(request.getParameter("Primitiveparameter"));
+		int Compositeparameter = Integer.parseInt(request.getParameter("Compositeparameter"));
+		
+		System.out.println(primitivereturntype);
+		System.out.println(compositereturntype);
+		System.out.println(voidreturntype);
+		System.out.println(Primitiveparameter);
+		System.out.println(Compositeparameter);
 		
 		String[] values = value.split("\\r?\\n");
 		ArrayList list = new ArrayList();
@@ -52,22 +65,11 @@ public class CmService extends HttpServlet {
 
 		}
 		
-		
-		
+			
 		ArrayList<MethodsComplexity> list1 = new ArrayList<>(); 
-		list1 =  Cm.MethodsCm(list);
+		list1 =  Cm.MethodsCm(list,primitivereturntype,compositereturntype,voidreturntype,Primitiveparameter,Compositeparameter);
 		 
 		request.setAttribute("List", list1);
-		//request.setAttribute("List2", list);
-		
-		
-		//ArrayList<Integer> variblelist = new ArrayList<Integer>();
-		//ArrayList<Integer> listvarible =(ArrayList<Integer>) request.getAttribute("variableList");
-		System.out.println(list1);
-		System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-
-		
-		
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/methods.jsp");
 		dispatcher.forward(request, response);
