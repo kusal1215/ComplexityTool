@@ -5,13 +5,13 @@ import model.VariableComplexity;
 
 public class Cv {
 
-	public static ArrayList<VariableComplexity> variable(ArrayList<String> line) {
+	public static ArrayList<VariableComplexity> variable(ArrayList<String> line,int Globalvariable, int Localvariable,int Primitivedatatypevariable,int Compositedatatypevariable) {
 
-//		ArrayList<Integer> Cm = new ArrayList<Integer>();
-//		ArrayList<Integer> premitiveList = new ArrayList<Integer>();
-//		ArrayList<Integer> compositeList = new ArrayList<Integer>();
-//		ArrayList<Integer> WmrtList = new ArrayList<Integer>();
-		int[] hdbv;
+
+//		System.out.println(Globalvariable);
+//		System.out.println(Localvariable);
+//		System.out.println(Primitivedatatypevariable);
+//		System.out.println(Compositedatatypevariable);
 
 		ArrayList<VariableComplexity> list = new ArrayList<VariableComplexity>();
 
@@ -58,8 +58,8 @@ public class Cv {
 
 								if (!wordsForVariables[r + 2].contains("(")) {// not a method
 									primitive_variable = primitive_variable + 1;
-									complexityofprimetive = (primitive_variable * 1);
-									wvs =  2;
+									complexityofprimetive = (primitive_variable * Primitivedatatypevariable);
+									wvs =  Globalvariable;
 
 								}else {
 									complexity = 0;
@@ -68,8 +68,8 @@ public class Cv {
 							} else if (wordsForVariables[r + 1].contains("interface")) {// check interface
 
 								composite_variable = composite_variable + 1;
-								complexityofcom = (composite_variable * 2);
-								wvs =  2;
+								complexityofcom = (composite_variable * Compositedatatypevariable);
+								wvs =  Globalvariable;
 							}else {
 								complexity = 0;
 							}
@@ -83,8 +83,8 @@ public class Cv {
 
 								if (!wordsForVariables[r + 1].contains("(")) {// not a method
 									primitive_variable = primitive_variable + 1;
-									complexityofprimetive = (primitive_variable * 1);
-									wvs =  2;
+									complexityofprimetive = (primitive_variable * Primitivedatatypevariable);
+									wvs =  Globalvariable;
 								}else {
 									complexity = 0;
 								}
@@ -101,8 +101,8 @@ public class Cv {
 								
 								
 									composite_variable = composite_variable + 1;
-									complexityofcom = (composite_variable * 2);
-									wvs =  2;
+									complexityofcom = (composite_variable * Compositedatatypevariable);
+									wvs =  Globalvariable;
 							} else {
 								complexity = 0;
 							}
