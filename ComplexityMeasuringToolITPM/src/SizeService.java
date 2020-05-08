@@ -40,8 +40,22 @@ public class SizeService extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 
-		String value = request.getParameter("submit");
+
+		String value = request.getParameter("userId");
 		System.out.println(value);
+		System.out.println("xxxxxxxxxxxxxxxxxxx");
+		
+		int Keyword = Integer.parseInt(request.getParameter("Keyword"));
+		int Identifer = Integer.parseInt(request.getParameter("Identifer"));
+		int Operator = Integer.parseInt(request.getParameter("Operator"));
+		int Number = Integer.parseInt(request.getParameter("Number"));
+		int Stringliteral = Integer.parseInt(request.getParameter("Stringliteral"));
+		
+		System.out.println(Keyword);
+		System.out.println(Identifer);
+		System.out.println(Operator);
+		System.out.println(Number);
+		System.out.println(Stringliteral);
 		
 		String[] values = value.split("\\r?\\n");
 		ArrayList list = new ArrayList();
@@ -55,14 +69,10 @@ public class SizeService extends HttpServlet {
 		
 		
 		  ArrayList<Integer> list1 = new ArrayList<Integer>(); 
-		  list1 =  Size.calcSize(list);
+		  list1 =  Size.calcSize(list,Keyword,Identifer,Operator,Number,Stringliteral);
 		 
 		request.setAttribute("List", list1);
-	//	request.setAttribute("List2", list);
-		
-		
-		//ArrayList<Integer> variblelist = new ArrayList<Integer>();
-		//ArrayList<Integer> listvarible =(ArrayList<Integer>) request.getAttribute("variableList");
+
 		System.out.println(list1);
 		System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 

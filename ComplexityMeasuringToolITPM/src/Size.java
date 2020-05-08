@@ -5,21 +5,17 @@ import javax.lang.model.SourceVersion;
 //import model.MethodsComplexity;
 import model.SizeComplexity;
 
-public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<String>line) {
+public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<String>line,int Keyword,int Identifer,int Operator ,int Number,int Stringliteral) {
 
-    //String fileInput = uploadedContent.getText();
-
+//	System.out.println(Keyword);
+//	System.out.println(Identifer);
+//	System.out.println(Operator);
+//	System.out.println(Number);
+//	System.out.println(Stringliteral);
 	
 	ArrayList<SizeComplexity> list = new ArrayList<SizeComplexity>();
-	   ArrayList<String> variableList = new ArrayList<String>();
+    ArrayList<String> variableList = new ArrayList<String>();
 
-//	 ArrayList<Integer> lineComplexity = new ArrayList<Integer>(); 
-//    ArrayList<String> arrayToStoreBrackets = new ArrayList<String>();
-//    ArrayList<Integer>keywordlist  = new ArrayList<Integer>();
-//    ArrayList<Integer>Opratorlist  = new ArrayList<Integer>();
-//    ArrayList<Integer>numariclist  = new ArrayList<Integer>();
-//    ArrayList<Integer>Stringlist  = new ArrayList<Integer>();
-//    ArrayList<Integer>identyList  = new ArrayList<Integer>();
     
     int countComplexity = 0;
     int numofkeywords = 0;
@@ -59,7 +55,7 @@ public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<St
         "RuntimeException", "StringIndexOutOfBoundsException"
     };
 
-   // String[] line = fileInput.split("\r\n|\r|\n");
+   
 
     //find variables
     for (int v = 0; v < line.size(); v++) {
@@ -70,7 +66,7 @@ public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<St
         for (int r = 0; r < wordsForVariables.length; r++) {
             for (int dataType = 0; dataType < dataTypesToFindVariables.length; dataType++) {//if variable is after data type
             	
-            	//System.out.println(dataTypesToFindVariables.toString());
+            	
             	
                 if (wordsForVariables[r].equals(dataTypesToFindVariables[dataType])) {
                     String idVariable = wordsForVariables[r + 1];
@@ -120,58 +116,37 @@ public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<St
             for (int r = 0; r < words.length; r++) {
 
                 if (SourceVersion.isKeyword(words[r])) {//java keywords
-                    //countComplexity = countComplexity + 1;
-                    System.out.println(SourceVersion.isKeyword(words[r]));
                     
-                    //System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-                    
+                    System.out.println(SourceVersion.isKeyword(words[r])); 
                     numofkeywords = numofkeywords+ 1;
-                   // countComplexity = (numofkeywords * 1);
-                   // keywordlist.add(numofkeywords);
+                   
                 }
                if (words[r].contains("static")) {
-//                   // countComplexity = countComplexity - 1;
-                	numofkeywords = numofkeywords+ 1;
-
-//                	
-//                	 numofkeywords = numofkeywords+ 1;
-//                	 countComplexity = (numofkeywords *1);
-//                	 keywordlist.add(numofkeywords);
-//                	 System.out.println(countComplexity);
-//                	 
+                	numofkeywords = numofkeywords+ 1;               	 
                 }//java keywords
                 if (words[r].contains("new") || words[r].contains("delete") || words[r].contains("throw") || words[r].contains("throws") || words[r].contains("break") || words[r].contains("continue")) {
-                   // countComplexity = countComplexity + 1;
+                   
                 	 numofkeywords = numofkeywords+ 1;
-                	 //countComplexity = (numofkeywords *1);
-                	// keywordlist.add(numofkeywords);
+                	 
                 }//java keywords
                 if (words[r].contains("System") || words[r].contains("out")) {// System and out
-                    //countComplexity = countComplexity + 1;
+                   
                 	 numofkeywords = numofkeywords+ 1;
-                	 //countComplexity = (numofkeywords *1);
-                	// keywordlist.add(numofkeywords);
+                	 
                 }
                 if (words[r].contains(".")) {//if . contains in a word like sout
                     char[] chWords = words[r].toCharArray();
                     for (int m = 0; m < chWords.length; m++) {
                         if (chWords[m] == '.') {
                         	 numofkeywords = numofkeywords+ 1;
-                        	 //countComplexity = (numofkeywords *1);
-                        	// keywordlist.add(numofkeywords);
+                        	 
                         }
                     }
                 }
-//                if (words[r].startsWith("&") || words[r].startsWith("*")) {//reference and dereference operator
-//                    char[] ch = words[r].toCharArray();
-//                    if (ch.length > 1) {
-//                        countComplexity = countComplexity + 2;
-//                    }
-//                }
+
                 if (words[r].matches(".*\\d.*")) {//check if the value is a number // check numaric
                 	numofNumaric = numofNumaric + 1;
-                	//numariclist.add(numofNumaric);
-                	//countComplexity = (numofNumaric * 1);
+                	
                 }
                 
                 if (words[r].contains("(")) {//if method/object or word within double quotes //idqenty
@@ -180,20 +155,12 @@ public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<St
                     String mn = words[r].substring(0, indexOfBrack);
                     if (!mn.equals(null) && !mn.isEmpty()) {//if method name exists //idqenty
                     	numofidenty = numofidenty+1;
-                    	//identyList.add(numofidenty);
-                        //countComplexity =(numofidenty * 1) ;
+                    	
                     }
                    
 
-                    	int indexOfBracket = words[r].indexOf("(");
-//                    int indexOfQuote = indexOfBracket + 2;
-//                    String wordWithQuote = words[r].substring(0, indexOfQuote);
-//
-//                    if (wordWithQuote.contains("\"")) {//words within double quotes 
-//                    	numofstring = numofstring + 1;
-//                    	Stringlist.add(numofstring);
-//                        countComplexity = (numofstring * 1);
-//                    }
+                    int indexOfBracket = words[r].indexOf("(");
+
                     //Cs for data types with brackets -- ex: (long)
                     int fistIndexAfterBracket = indexOfBracket + 1;
                     String dataTypeName = words[r].substring(fistIndexAfterBracket);
@@ -212,9 +179,6 @@ public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<St
                 //string
                 if (words[r].startsWith("\"")) {//words within double quotes seperately
                     if (!words[r + 1].equals("+")) {
-                        //countComplexity = countComplexity + 1;
-                        //Stringlist.add(numofstring);
-                        //countComplexity = (numofstring * 1);
                     	numofstring = numofstring + 1;
                     }
                 }
@@ -223,37 +187,29 @@ public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<St
                 	
                 }
                 if (words[r].contains("[")) {//if array //idqenty
-                    //countComplexity = countComplexity + 1;
                 	numofidenty = numofidenty+1;
-                	//identyList.add(numofidenty);
-                    //countComplexity =(numofidenty * 1) ;
+                	
                 }
                 //******************************************c++*******************************************************************
 
                 for (int cp = 0; cp < cPlusPlusKeywords.length; cp++) {//check if c++ keywords
                     if (words[r].equals(cPlusPlusKeywords[cp])) {
-                       // countComplexity = countComplexity + 1;
+                      
                     }
                 }
                 for (int opCs1 = 0; opCs1 < operatorsCs1.length; opCs1++) {//according to operators with Cs 1// operates
                     if (words[r].equals(operatorsCs1[opCs1])) {
-                        //countComplexity = countComplexity + 1;
                         numofop = numofop + 1;
-                      //  Opratorlist.add(numofop);
-                      //countComplexity = (numofop * 1);
+                      
                     }
                 }
-//                if (words[r].contains("++") || words[r].contains("--") ||  words[r].contains("*") ||  words[r].contains("%") ||  words[r].contains("+") ||  words[r].contains("--")) { //if words contain ++ or --
-//                    countComplexity = countComplexity + 1;
-//                }
+
                 for (int ex = 0; ex < allExceptions.length; ex++) { //exceptions occurs
                     if (words[r].contains(allExceptions[ex])) {
                         countComplexity = countComplexity + 1;
-                        if (words[r].startsWith("catch") || words[r - 1].equals("catch")) {// check for e --ex: catch(FileNotFoundException e) or catch
-                            //countComplexity = countComplexity + 1;
+                        if (words[r].startsWith("catch") || words[r - 1].equals("catch")) {// check for e --ex: catch(FileNotFoundException e) or catch 
                         	numofkeywords = numofkeywords+ 1;
-                       	 	//countComplexity = (numofkeywords *1);
-                       	 	//keywordlist.add(numofkeywords);
+                       	 	
                         	 
                         }
                     }
@@ -267,7 +223,7 @@ public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<St
                     countComplexity = countComplexity + 1;
                 }
                 if (words[r].startsWith("catch") && words[r].endsWith(")")) {//if catch within a word -- ex: catch(FileNotFoundException e) 
-                    //countComplexity = countComplexity + 1;
+                   
                 }
                 for (int manip = 0; manip < manipulators.length; manip++) {//check if the value is a manipulator
                     if (words[r].equals(manipulators[manip])) {
@@ -277,22 +233,17 @@ public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<St
                 for (int vl = 0; vl < variableList.size(); vl++) {//check if variable //idqenty
                     String var = variableList.get(vl);
                     if (words[r].contains(var)) {
-                        //countComplexity = countComplexity + 1;
-                    	numofidenty = numofidenty+1;
-                    	//identyList.add(numofidenty);
-                        //countComplexity =(numofidenty * 1) ;
+                       
                     }
                 }
                 if (words[r].equals("new")) {//for class names -- ex: FileReader f = new ....//object idqenty
-                   // countComplexity = countComplexity + 1;
                 	numofidenty = numofidenty+1;
-                //	identyList.add(numofidenty);
-                    //countComplexity =(numofidenty * 1) ;
+              
                 }
 
             }
         }
-        countComplexity = (numofkeywords * 1) + (numofNumaric *1) + (numofidenty *1) + (numofstring *1) + (numofop *1);
+        countComplexity = (numofkeywords * Keyword) + (numofNumaric * Number) + (numofidenty * Identifer) + (numofstring * Stringliteral) + (numofop * Operator);
         sizeComplexity.setNumofNumaric(numofNumaric);
         sizeComplexity.setNumofkeywords(numofkeywords);
         sizeComplexity.setNumofidenty(numofidenty);
@@ -310,10 +261,7 @@ public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<St
         list.add(sizeComplexity);
        
     }
-//    result.append("Measuring the complexity of a program statement due to size (Cs) \n");commented 
-//    for(int l=0; l<lineComplexity.size(); l++){
-//            result.append("line "+l+" ---- "+lineComplexity.get(l) + " \n");
-//        } commented 
+
 
  
  
