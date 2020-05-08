@@ -40,8 +40,21 @@ public class CVService extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 
-		String value = request.getParameter("submit");
+		String value = request.getParameter("userId");
 		System.out.println(value);
+		System.out.println("xxxxxxxxxxxxxxxxxxx");
+		
+		int Globalvariable = Integer.parseInt(request.getParameter("Globalvariable"));
+		int Localvariable = Integer.parseInt(request.getParameter("Localvariable"));
+		int Primitivedatatypevariable = Integer.parseInt(request.getParameter("Primitivedatatypevariable"));
+		int Compositedatatypevariable = Integer.parseInt(request.getParameter("Compositedatatypevariable"));
+		
+		
+		System.out.println(Globalvariable);
+		System.out.println(Localvariable);
+		System.out.println(Primitivedatatypevariable);
+		System.out.println(Compositedatatypevariable);
+		
 		
 		String[] values = value.split("\\r?\\n");
 		ArrayList list = new ArrayList();
@@ -55,19 +68,9 @@ public class CVService extends HttpServlet {
 		
 		
 		  ArrayList<Integer> list1 = new ArrayList<Integer>(); 
-		  list1 =  Cv.variable(list);
+		  list1 =  Cv.variable(list,Globalvariable,Localvariable,Primitivedatatypevariable,Compositedatatypevariable);
 		 
 		request.setAttribute("List", list1);
-		//request.setAttribute("List2", list);
-		
-		
-		//ArrayList<Integer> variblelist = new ArrayList<Integer>();
-		//ArrayList<Integer> listvarible =(ArrayList<Integer>) request.getAttribute("variableList");
-		//System.out.println(list1);
-		//System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-
-		
-		
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Variables.jsp");
 		dispatcher.forward(request, response);
