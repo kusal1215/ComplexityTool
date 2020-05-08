@@ -94,7 +94,7 @@
 				<div class="card-body text-primary">
 					<img class="image" src="image/3.jpg">
 
-					<form action="CmService" method="post">
+					<form action="PassMethod" method="post">
 						<button class="card border-success mb-3 border	" type="submit"
 							name="submit" value="<%=val%>"
 							style="text-decoration-style: solid; padding: 10px 70px 8px 70px; margin: 0 20px 0 10px">

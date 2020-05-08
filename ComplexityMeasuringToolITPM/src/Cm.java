@@ -4,12 +4,13 @@ import model.MethodsComplexity;
 
 public class Cm {
 
-	public static ArrayList<MethodsComplexity> MethodsCm(ArrayList<String> line) {
+	public static ArrayList<MethodsComplexity> MethodsCm(ArrayList<String> line,int primitivereturntype,int compositereturntype,int voidreturntype,int Primitiveparameter,int Compositeparameter) {
 
-//		ArrayList<Integer> Cm = new ArrayList<Integer>();
-//		ArrayList<Integer> premitiveList = new ArrayList<Integer>();
-//		ArrayList<Integer> compositeList = new ArrayList<Integer>();
-//		ArrayList<Integer> WmrtList = new ArrayList<Integer>();
+//		System.out.println(primitivereturntype);
+//		System.out.println(compositereturntype);
+//		System.out.println(voidreturntype);
+//		System.out.println(Primitiveparameter);
+//		System.out.println(Compositeparameter);
 		
 		ArrayList<MethodsComplexity> list = new ArrayList<MethodsComplexity>();
 		
@@ -44,11 +45,11 @@ public class Cm {
 						//check public ,private,protected in method 
 						if(wordsForVariables[r].contains("public") || wordsForVariables[r].contains("protected") ||wordsForVariables[r].contains("private")) {
 					
-							//System.out.println("IN first if " + wordsForVariables[r + 1]);
+							
 							//check if the second word is static
 							if (wordsForVariables[r + 1].contains("static")) {
 								
-								//System.out.println("IN static if ");
+								
 								//if satic check 3 word premitive
 								if (wordsForVariables[r + 2].contains("int")
 										|| wordsForVariables[r + 2].contains("float")
@@ -57,16 +58,16 @@ public class Cm {
 										|| wordsForVariables[r + 2].contains("boolean")
 										|| wordsForVariables[r + 2].contains("char")) {
 									
-									//System.out.println("IN 3rd id " + wordsForVariables[r+2]);
+									
 									// check if contain (
 									if (wordsForVariables[r + 3].contains("(")) {  //method primitive
 										primitive_data = primitive_data + 1;
 										pri_wmrt = pri_wmrt + 1;
-										complexity = (primitive_data * 1)+ pri_wmrt ;
-										//premitiveList.add(primitive_data);
+										complexity = (primitive_data * primitivereturntype)+ pri_wmrt ;
+										
 										//setting the primitive data value to the model class object
 										methodsComplexity.setNpdtp(primitive_data);
-										//WmrtList.add(pri_wmrt);
+										
 										//setting the pri_wmrt value to the methodsComplexity object
 										methodsComplexity.setWmrt(pri_wmrt);
 										
@@ -84,11 +85,11 @@ public class Cm {
 										if (wordsForVariables[r + 3].contains("(")) {// composite method
 											composite_data = composite_data + 1;
 											com_wmrt = com_wmrt + 2;
-											complexity = (composite_data * 2)+ com_wmrt;
-											//compositeList.add(composite_data);
+											complexity = (composite_data * compositereturntype)+ com_wmrt;
+											
 											//setting the composite value to the model class object
 											methodsComplexity.setNedtp(composite_data);
-											//WmrtList.add(com_wmrt);
+											
 											//setting the pri_wmrt value to the methodsComplexity object
 											methodsComplexity.setWmrt(com_wmrt);
 										}		
@@ -98,11 +99,11 @@ public class Cm {
 									if (wordsForVariables[r + 3].contains("(")) {
 										composite_data = composite_data + 1;
 										void_wmrt = void_wmrt + 0;
-										complexity = (composite_data * 2)+ void_wmrt;
-										//compositeList.add(composite_data);
+										complexity = (composite_data * voidreturntype)+ void_wmrt;
+										
 										//setting the composite value to the model class object
 										methodsComplexity.setNedtp(composite_data);
-										//WmrtList.add(void_wmrt);
+										
 										//setting the pri_wmrt value to the methodsComplexity object
 										methodsComplexity.setWmrt(void_wmrt);
 									}		
@@ -120,20 +121,20 @@ public class Cm {
 										|| wordsForVariables[r + 1].contains("char")) {
 										
 									
-									//System.out.println("IN else " + wordsForVariables[r + 1]);
+									
 									
 		
 										if (wordsForVariables[r + 2].contains("(")) {// check if method 
 											
-											//System.out.println("IN else 2nd " + wordsForVariables[r + 2]);
+											
 											primitive_data = primitive_data + 1;
 											pri_wmrt = pri_wmrt + 1;
-											//System.out.println("IN else 2nd " + primitive_data);
-											complexity = (primitive_data * 1)+ pri_wmrt;
-											//premitiveList.add(primitive_data);
+											
+											complexity = (primitive_data * primitivereturntype)+ pri_wmrt;
+											
 											//setting the primitive data value to the model class object
 											methodsComplexity.setNpdtp(primitive_data);
-											//WmrtList.add(pri_wmrt);
+											
 											//setting the pri_wmrt value to the methodsComplexity object
 											methodsComplexity.setWmrt(pri_wmrt);
 											
@@ -148,11 +149,11 @@ public class Cm {
 										if (wordsForVariables[r + 2].contains("(")) {
 											composite_data = composite_data + 1;
 											com_wmrt = com_wmrt + 2;
-											complexity = (composite_data * 2)+ com_wmrt;
-											//compositeList.add(composite_data);
+											complexity = (composite_data * compositereturntype)+ com_wmrt;
+											
 											//setting the composite value to the model class object
 											methodsComplexity.setNedtp(composite_data);
-											//WmrtList.add(com_wmrt);
+											
 											//setting the com_wmrt value to the methodsComplexity object
 											methodsComplexity.setWmrt(com_wmrt);
 										}		
@@ -163,7 +164,7 @@ public class Cm {
 				
 					}
 					
-				//Cm.add(complexity);
+				
 				//setting the cm value to the methodsComplexity object
 				methodsComplexity.setCm(complexity);
 				complexity = 0;
