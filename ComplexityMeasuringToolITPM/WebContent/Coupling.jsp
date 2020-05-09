@@ -1,3 +1,4 @@
+<%@page import="model.Coupling"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -52,19 +53,9 @@
 
 	<%
 		ArrayList lines = (ArrayList) request.getAttribute("lines");
-	ArrayList line = (ArrayList) request.getAttribute("num");
-	ArrayList Nr = (ArrayList) request.getAttribute("Nr");
-	ArrayList Wr = (ArrayList) request.getAttribute("Wr");
-	ArrayList Nmcms = (ArrayList) request.getAttribute("Nmcms");
-	ArrayList Wmcms = (ArrayList) request.getAttribute("Wmcms");
-	ArrayList Nrmcms = (ArrayList) request.getAttribute("Nrmcms");
-	ArrayList Wrmcms = (ArrayList) request.getAttribute("Wrmcms");
-	ArrayList Nrmcrms = (ArrayList) request.getAttribute("Nrmcrms");
-	ArrayList Wrmcrms = (ArrayList) request.getAttribute("Wrmcrms");
-	ArrayList Nmcrms = (ArrayList) request.getAttribute("Nmcrms");
-	ArrayList Wmcrms = (ArrayList) request.getAttribute("Wmcrms");
-	ArrayList Ccp = (ArrayList) request.getAttribute("Ccp");
-	ArrayList Nmcrmd = (ArrayList) request.getAttribute("Different");
+
+	ArrayList<Coupling> couplingList = (ArrayList) request.getAttribute("couplingList");
+	ArrayList<Coupling> CcpList = (ArrayList) request.getAttribute("CcpList");
 	%>
 
 	<section id="background" style="">
@@ -78,28 +69,10 @@
 						<th scope="col">Program Statements</th>
 						<th scope="col">Nr</th>
 						<th scope="col">Nmcms</th>
-
-						<th scope="col">Nmcmd</th>
-
 						<th scope="col">Nmcrms</th>
-
-						<th scope="col">Nmcrmd</th>
 						<th scope="col">Nrmcrms</th>
-
-						<th scope="col">Nrmcrmd</th>
-
 						<th scope="col">Nrmcms</th>
-
-						<th scope="col">Nrmcmd</th>
-
 						<th scope="col">Nrmrgvs</th>
-
-						<th scope="col">Nmrgvd</th>
-
-						<th scope="col">Nrmrgvs</th>
-
-						<th scope="col">Nrmrgvd</th>
-
 						<th scope="col">Ccp</th>
 					</tr>
 				</thead>
@@ -112,84 +85,21 @@
 
 
 					<tr>
-
-						<td width="60"><%=line.get(i)%></td>
-
-						<td width="60"><%=lines.get(i)%></td>
-
-						<td width="60"><%=Nr.get(i)%></td>
-						<%-- <td width="119"><%=Wr.get(i)%></td> --%>
-
-
-						<td width="60"><%=Nmcms.get(i)%></td>
-						<%-- <td width="119"><%=Wmcms.get(i)%></td> --%>
-						<td width="60"><%=Nmcrmd.get(i)%></td>
-
-						<td width="60"><%=Nrmcms.get(i)%></td>
-						<%-- <td width="119"><%=Wrmcms.get(i)%></td> --%>
-						<td width="60"><%=Nmcrmd.get(i)%></td>
-
-						<td width="60"><%=Nrmcrms.get(i)%></td>
-						<%-- <td width="119"><%=Wrmcrms.get(i)%></td> --%>
-						<td width="60"><%=Nmcrmd.get(i)%></td>
-
-						<td width="60"><%=Nmcrms.get(i)%></td>
-						<%-- <td width="119"><%=Wmcrms.get(i)%></td> --%>
-						
-						<td width="60"><%=Nmcrmd.get(i)%></td>
-						<td width="60"><%=Nmcrmd.get(i)%></td>
-						<td width="60"><%=Nmcrmd.get(i)%></td>
-						<td width="60"><%=Nmcrmd.get(i)%></td>
-						<td width="60"><%=Nmcrmd.get(i)%></td>
-						<%-- <td width="119"><%=lines.get(i)%></td> --%>
-						
-						<td width="60"><%=Ccp.get(i)%></td>
-
-
+						<td width="119"><%=couplingList.get(i).getLineNo()%></td>
+						<td width="119"><%=couplingList.get(i).getLine()%></td>
+						<td width="119"><%=couplingList.get(i).getNr()%></td>
+						<td width="119"><%=couplingList.get(i).getNmcms()%></td>
+						<td width="119"><%=couplingList.get(i).getNmcrms()%></td>
+						<td width="119"><%=couplingList.get(i).getNrmcrms()%></td>
+						<td width="119"><%=couplingList.get(i).getNrmcms()%></td>
+						<td width="119"><%=couplingList.get(i).getNrmrgvs()%></td>
+						<td width="119"><%=CcpList.get(i)%></td>
 					</tr>
 					<%
 						}
 					}
 					%>
-					<!-- <tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td>Larry</td>
-					<td>the Bird</td>
-					<td>@twitter</td>
-				</tr>
 
-				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td>Larry</td>
-					<td>the Bird</td>
-					<td>@twitter</td>
-				</tr>
-				
- -->
 				</tbody>
 			</table>
 		</div>
