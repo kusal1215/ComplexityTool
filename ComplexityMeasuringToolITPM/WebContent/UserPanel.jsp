@@ -148,7 +148,7 @@
 				<div class="card-body text-primary">
 					<img class="image" src="image/2.jpg">
 
-					<form action="ControlStructureService" method="post">
+					<form action="PassControl" method="post">
 						<button class="card border-info mb-3 border" type="submit"
 							name="submit" value="<%=val %>"
 							style="text-decoration-style: solid; padding: 10px 20px 8px 20px; margin: 0 20px 0 5px">
