@@ -167,9 +167,9 @@
 				<div class="card-body text-primary">
 					<img class="image" src="image/1.jpg">
 
-					<form action="" method="post">
+					<form action="Allservices" method="post">
 						<button class="card border-danger mb-3 border" type="submit"
-							name="submit" value=""
+							name="submit" value="<%=val %>"
 							style="text-decoration-style: solid; padding: 10px 70px 8px 70px; margin: 0 20px 0 10px">
 							<font color=" #007bff">COMPLEXITY</font>
 						</button>
