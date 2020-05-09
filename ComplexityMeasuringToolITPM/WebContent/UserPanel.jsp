@@ -23,7 +23,6 @@
 
 <%
 		String val = (String) request.getAttribute("Value");
-		//ArrayList list = (ArrayList) request.getAttribute("List");
 		
 %>
 
@@ -130,7 +129,7 @@
 				<div class="card-body text-primary">
 					<img class="image" src="image/1.jpg">
 
-					<form action="CouplingService" method="post">
+					<form action="PassCoupling" method="post">
 						<button class="card border-warning mb-3 border" type="submit"
 							name="submit" value="<%=val %>"
 							style="text-decoration-style: solid; padding: 10px 70px 8px 70px; margin: 0 20px 0 10px">

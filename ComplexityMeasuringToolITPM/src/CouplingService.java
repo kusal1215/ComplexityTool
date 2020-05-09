@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Coupling;
+import model.GlobalSet;
+import model.Recursive;
+import model.Regular;
+
 /**
  * Servlet implementation class CouplingService
  */
@@ -43,138 +48,70 @@ public class CouplingService extends HttpServlet {
 
 		response.setContentType("text/html");
 
-		String value = request.getParameter("submit");
+		String value = request.getParameter("weightId");
+		System.out.println(value);
+		
+
+		// ...............
+		// ...............
+		int WNr = Integer.parseInt(request.getParameter("row1"));
+		int WNmcms = Integer.parseInt(request.getParameter("row2"));
+		int WNmcmd = Integer.parseInt(request.getParameter("row3"));
+		int WNmcrms = Integer.parseInt(request.getParameter("row4"));
+		int WNmcrmd = Integer.parseInt(request.getParameter("row5"));
+		int WNrmcrms = Integer.parseInt(request.getParameter("row6"));
+		int WNrmcrmd = Integer.parseInt(request.getParameter("row7"));
+		int WNrmcms = Integer.parseInt(request.getParameter("row8"));
+		int WNrmcmd = Integer.parseInt(request.getParameter("row9"));
+		int WNmrgvs = Integer.parseInt(request.getParameter("row10"));
+		int WNmrgvd = Integer.parseInt(request.getParameter("row11"));
+		int WNrmrgvs = Integer.parseInt(request.getParameter("row12"));
+		int WNrmrgvd = Integer.parseInt(request.getParameter("row13"));
+
+		System.out.println(WNrmcrmd);
+		System.out.println(WNmrgvd);
+		System.out.println(WNrmrgvs);
+		System.out.println(WNrmrgvd);
+		// ...............
+		// ...............
 
 		String[] values = value.split("\\r?\\n");
 		ArrayList<String> list = new ArrayList<String>();
 
 		/*
-		 * Access lines
+		 * Line Set
 		 * 
 		 */
 		for (int i = 0; i < values.length; i++) {
-			/* out.print(values[i]); */
 			list.add(i, values[i]);
 		}
 
-		/*
-		 * Access line numbers
-		 * 
-		 */
-		ArrayList<Integer> lineNum = new ArrayList<Integer>();
-		lineNum = coupling.LineNumber(list);
+		// testingRecursive
+		ArrayList<Recursive> RecursiveModelList = new ArrayList<Recursive>();
+		RecursiveModelList = CodeCoupling.Recursive(list);
 
-		/*
-		 * 
-		 * Call Nr method in the coupling class
-		 * 
-		 */
-		ArrayList<Integer> Nr = new ArrayList<Integer>();
-		Nr = coupling.Nr(list);
-		System.out.println("Size of the Nr list" + Nr.size());
+		// testingRegular
+		ArrayList<Regular> RegularModelList = new ArrayList<Regular>();
+		RegularModelList = CodeCoupling.Regular(list);
 
-		ArrayList<Integer> Wr = new ArrayList<Integer>();
-		Wr = coupling.Wr(Nr);
+		ArrayList<Coupling> couplingList = new ArrayList<Coupling>();
+		couplingList = CodeCoupling.Coupling(list);
 
-		/*
-		 * 
-		 * Call Nmcms method in the ReguarMethods class
-		 * 
-		 */
-		ArrayList<Integer> Nmcms = new ArrayList<Integer>();
-		Nmcms = RegularMethods.Nmcms(list);
-		System.out.println("Size of the Nr list" + Nmcms.size());
+		ArrayList<Integer> CcpList = new ArrayList<Integer>();
+		CcpList = CodeCoupling.Ccp(list, WNr, WNmcms, WNmcmd, WNmcrms, WNmcrmd, WNrmcrms, WNrmcrmd, WNrmcms, WNrmcmd,
+				WNmrgvs, WNmrgvd, WNrmrgvs, WNrmrgvd);
 
-		ArrayList<Integer> Wmcms = new ArrayList<Integer>();
-		Wmcms = RegularMethods.Wmcms(Nmcms);
-
-		/*
-		 * 
-		 * Call Nrmcms method in the Regular Methods class
-		 * 
-		 */
-		ArrayList<Integer> Nrmcms = new ArrayList<Integer>();
-		Nrmcms = RecursiveMethods.Nrmcms(list);
-		System.out.println("Size of the Nr list" + Nrmcms.size());
-
-		ArrayList<Integer> Wrmcms = new ArrayList<Integer>();
-		Wrmcms = RecursiveMethods.Wrmcms(Nrmcms);
-
-		/*
-		 * 
-		 * Call Nrmcrms method in the Recursive Methods class
-		 * 
-		 */
-		ArrayList<Integer> Nrmcrms = new ArrayList<Integer>();
-		Nrmcrms = RecursiveMethods.Nrmcrms(list);
-		System.out.println("Size of the Nr list" + Nrmcrms.size());
-
-		ArrayList<Integer> Wrmcrms = new ArrayList<Integer>();
-		Wrmcrms = RecursiveMethods.Wrmcrms(Nrmcrms);
-
-		/*
-		 * 
-		 * Call Nmcrms method in the Recursive Methods class
-		 * 
-		 */
-		ArrayList<Integer> Nmcrms = new ArrayList<Integer>();
-		Nmcrms = RegularMethods.Nmcrms(list);
-		System.out.println("Size of the Nr list" + Nmcrms.size());
-
-		ArrayList<Integer> Wmcrms = new ArrayList<Integer>();
-		Wmcrms = RegularMethods.Wmcrms(Nmcrms);
-		
-		
-		/*
-		 * 
-		 * Call Ccp
-		 * 
-		 */
-		ArrayList<Integer> Ccp = new ArrayList<Integer>();
-		Ccp = coupling.Ccp(list,Nr, Wr, Nmcms, Wmcms, Nrmcms, Wrmcms, Nrmcrms, Wrmcrms, Nmcrms, Wmcrms);
-		System.out.println("Size of the ccp list" + Ccp.size());
+		ArrayList<GlobalSet> GlobalList = new ArrayList<GlobalSet>();
+		GlobalList = CodeCoupling.GlobalVariable(list);
 
 		
-		
-		
+		//ends here.....
 
-		/*		
-		*
-		* Different Files
-		*
-		*/
-		ArrayList<String> Nmcrmd = new ArrayList<String>();
-		Nmcrmd = RecursiveMethods.Nrmcmd(list);
 		
-		
-		
-		
-		request.setAttribute("num", lineNum);
 		request.setAttribute("lines", list);
-
-		request.setAttribute("Nr", Nr);
-		request.setAttribute("Wr", Wr);
-
-		request.setAttribute("Nmcms", Nmcms);
-		request.setAttribute("Wmcms", Wmcms);
-
-		request.setAttribute("Nrmcms", Nrmcms);
-		request.setAttribute("Wrmcms", Wrmcms);
-
-		request.setAttribute("Nrmcrms", Nrmcrms);
-		request.setAttribute("Wrmcrms", Wrmcrms);
-
-		request.setAttribute("Nmcrms", Nmcrms);
-		request.setAttribute("Wmcrms", Wmcrms);
+		request.setAttribute("couplingList", couplingList);
+		request.setAttribute("CcpList", CcpList);
 		
-		request.setAttribute("Ccp", Ccp);
-		
-		request.setAttribute("Different", Nmcrmd);
-
-		// request.setAttribute("List", list);
-
-		// RequestDispatcher dispatcher =
-		// getServletContext().getRequestDispatcher("/output.jsp");
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Coupling.jsp");
 		dispatcher.forward(request, response);
 
