@@ -4,8 +4,14 @@ import model.InheritanceComplexity;
 
 public class Inheritance {
 
-	public static ArrayList<InheritanceComplexity> inheritanceCi(ArrayList<String> line) {
+	public static ArrayList<InheritanceComplexity> inheritanceCi(ArrayList<String> line,int NoClass,int OneClass,int TwoClass ,int ThreeClass,int MoreClass) {
 		
+		
+		System.out.println(NoClass);
+		System.out.println(OneClass);
+		System.out.println(TwoClass);
+		System.out.println(ThreeClass);
+		System.out.println(MoreClass);
 		
 		ArrayList<InheritanceComplexity> list = new ArrayList<InheritanceComplexity>();
 
@@ -206,12 +212,22 @@ public class Inheritance {
 			
 			totalCi =  totalCi + InderectCi + derectCi ;
 			
-			if(totalCi > 3 ) {
-				complexity = 4;
+			if(totalCi == 0) {
+				complexity = totalCi * NoClass; 
+			}
+			else if(totalCi == 1){
+				complexity = totalCi * OneClass; 
+			}
+			else if(totalCi == 2){
+				complexity = totalCi * TwoClass; 
+			}
+			else if(totalCi == 3){
+				complexity = totalCi * ThreeClass; 
 			}
 			else {
-				complexity = totalCi;
+				complexity = totalCi * MoreClass;
 			}
+
 			inheritanceComplexity.setTotal(totalCi);
 			inheritanceComplexity.setCi(complexity);		
 			list.add(inheritanceComplexity);
