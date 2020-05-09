@@ -1,5 +1,6 @@
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -44,8 +45,23 @@ public class ciservice extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 
-		String value = request.getParameter("submit");
+		String value = request.getParameter("userId");
 		System.out.println(value);
+		System.out.println("xxxxxxxxxxxxxxxxxxx");
+		
+		int NoClass = Integer.parseInt(request.getParameter("Keyword"));
+		int OneClass = Integer.parseInt(request.getParameter("Identifer"));
+		int TwoClass = Integer.parseInt(request.getParameter("Operator"));
+		int ThreeClass = Integer.parseInt(request.getParameter("Number"));
+		int MoreClass = Integer.parseInt(request.getParameter("String"));
+		
+		PrintWriter out = response.getWriter();
+		System.out.println(NoClass);
+		System.out.println(OneClass);
+		System.out.println(TwoClass);
+		System.out.println(ThreeClass);
+		System.out.println(MoreClass);
+
 
 		String[] values = value.split("\\r?\\n");
 		ArrayList list = new ArrayList();
@@ -58,7 +74,7 @@ public class ciservice extends HttpServlet {
 
 		ArrayList<Integer> list1 = new ArrayList<Integer>();
 		//list1 = UI.inheritanceCi(list);
-		list1 = Inheritance.inheritanceCi(list);
+		list1 = Inheritance.inheritanceCi(list,NoClass,OneClass,TwoClass,ThreeClass,MoreClass);
 
 		//System.out.println("IN SERVLET. " + list1.size());
 		request.setAttribute("List", list1);
