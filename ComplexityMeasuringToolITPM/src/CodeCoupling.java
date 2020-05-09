@@ -58,7 +58,7 @@ public class CodeCoupling {
 
 				// loop the function only
 				for (int j = i; j <= lines.size(); j++) {
-					System.out.println(lines.get(j));
+					/* System.out.println(lines.get(j)); */
 					// Check for brackets
 					if (lines.get(j).contains("{") && lines.get(j).contains("}")) {
 						bracketnumber = bracketnumber + 0;
