@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import model.ControlStructures;
 
 /**
  * Servlet implementation class ControlStructureService
@@ -45,54 +45,37 @@ public class ControlStructureService extends HttpServlet {
 
 		response.setContentType("text/html");
 
-		String value = request.getParameter("submit");
-		/* System.out.println(value); */
+		String value = request.getParameter("ControlId");
+		System.out.println(value);
+
+		int WCondition = Integer.parseInt(request.getParameter("condition"));
+		int WLoop = Integer.parseInt(request.getParameter("loop"));
+		int WSwitch = Integer.parseInt(request.getParameter("switch"));
+		int WCase = Integer.parseInt(request.getParameter("case"));
+
+		System.out.println(WCondition);
+		System.out.println(WLoop);
+		System.out.println(WSwitch);
+		System.out.println(WCase);
 
 		String[] values = value.split("\\r?\\n");
 		ArrayList<String> list = new ArrayList<String>();
 
 		for (int i = 0; i < values.length; i++) {
-			/* out.print(values[i]); */
+		
 			list.add(i, values[i]);
 
 		}
-		/*
-		 * System.out.println(value); ArrayList list1 = new ArrayList(); list1 =
-		 * ControlStructure.Control(list);
-		 * 
-		 * request.setAttribute("List", list1);
-		 */
 
-		// Line number list
-		ArrayList<Integer> lineNum = new ArrayList<Integer>();
-		lineNum = ControlStructure.LineNum(list);
+		// Function calling
 
-		// Wtcs list
-		ArrayList<Integer> Wtcs = new ArrayList<Integer>();
-		Wtcs = ControlStructure.Wtcs(list);
+		ArrayList<ControlStructures> NCList = new ArrayList<ControlStructures>();
+		NCList = CodeControlStructure.Nc(list, WCondition, WLoop, WSwitch, WCase);
 
-		// Nc list
-		ArrayList<Integer> Nc = new ArrayList<Integer>();
-		Nc = ControlStructure.Nc(list);
-
-		// Ccspps
-		ArrayList<Integer> Ccspps = new ArrayList<Integer>();
-		Ccspps = ControlStructure.Ccspps(list, Nc, Wtcs);
-
-		// Ccs
-		ArrayList<Integer> Ccs = new ArrayList<Integer>();
-		Ccs = ControlStructure.Ccs(list, Nc, Wtcs, Ccspps);
+		//function calling ends here................
 
 		request.setAttribute("List", list);
-		request.setAttribute("lineNum", lineNum);
-
-		request.setAttribute("Wtcs", Wtcs);
-
-		request.setAttribute("Nc", Nc);
-
-		request.setAttribute("Ccspps", Ccspps);
-
-		request.setAttribute("Ccs", Ccs);
+		request.setAttribute("NCList", NCList);
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ControlStructure.jsp");
 		dispatcher.forward(request, response);

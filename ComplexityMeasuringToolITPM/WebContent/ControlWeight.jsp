@@ -1,15 +1,15 @@
-<%@page import="model.ControlStructures"%>
-<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Control Structure</title>
+<title>Control Structure Weight</title>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="ControlStructure.css">
+
+
+<link rel="stylesheet" href="ControlStructureweight.css">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -22,8 +22,14 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
+
+	<%
+		String val = (String) request.getAttribute("Value");
+	%>
+
 
 	<!--Navigation bar-->
 	<section id="nav-bar">
@@ -49,64 +55,51 @@
 		</nav>
 	</section>
 
+	<section id="background">
 
-
-	<%
-		
-	ArrayList list = (ArrayList) request.getAttribute("List");
-
-	ArrayList<ControlStructures> NCList = (ArrayList) request.getAttribute("NCList");
-	%>
-
-
-
-
-	<section id="background" style="">
 		<h1>Control Structure</h1>
-		<div id="table" style="overflow-x: auto;">
+		<form action="ControlStructureService" method="post">
 			<table class="table table-striped table-dark"
 				style="margin-top: 40px;">
-				<thead>
-					<tr>
-						<th scope="col">Line No</th>
-						<th scope="col">Program Statements</th>
-						<th scope="col">Wtcs</th>
-						<th scope="col">Nic</th>
-						<th scope="col">Ccspps</th>
-						<th scope="col">Ccs</th>
-					</tr>
-				</thead>
+				<tr>
+					<th scope="col">Control Structure Type</th>
+					<th scope="col">weight</th>
+
+
+				</tr>
 				<tbody>
-
-
-					<%
-						if (list != null) {
-
-						for (int i = 0; i < list.size(); i++) {
-					%>
-
-
 					<tr>
+						<th scope="row">A conditional control stucture as an 'if' or
+							'else-if' condition</th>
+						<td><input id="row1" name="condition" value="2"></td>
 
-						<td width="119"><%=NCList.get(i).getLineNo()%></td>
-						<td width="119"><%=NCList.get(i).getLine()%></td>
-						<td width="119"><%=NCList.get(i).getWtcs()%></td>
-						<td width="119"><%=NCList.get(i).getNC()%></td>
-						<td width="119"><%=NCList.get(i).getCcspps()%></td>
-						<td width="119"><%=NCList.get(i).getCcs()%></td>
-						
+
+					</tr>
+					<tr>
+						<th scope="row">An iterative control structure as a
+							'for''while' or 'do-while' loop</th>
+						<td><input id="row2" name="loop" value="3"></td>
+
+					</tr>
+					<tr>
+						<th scope="row">The 'switch' ststement in a 'switch-case'
+							control structure</th>
+						<td><input id="row3" name="switch" value="2"></td>
+
+					</tr>
+					<tr>
+						<th scope="row">Each 'case' statement in a 'switch-case'
+							control structure</th>
+						<td><input id="row4" name="case" value="1"></td>
+
 					</tr>
 
-					<%
-						}
-					}
-					%>
-
-					
 				</tbody>
-			</table>
-		</div>
 
+			</table>
+			<input type="hidden" name="ControlId" value="<%=val%>">
+			<button class="btn btn-success btn-md" type="submit" type="submit">Save</button>
+		</form>
 	</section>
 
 	<!----Footer-->
@@ -119,5 +112,8 @@
 				class="fa fa-cc-diners-club"></i>
 		</div>
 	</section>
+
+
 </body>
+
 </html>
