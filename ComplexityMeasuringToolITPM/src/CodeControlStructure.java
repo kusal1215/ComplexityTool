@@ -14,7 +14,8 @@ import model.ControlStructures;
  */
 public class CodeControlStructure {
 	
-	public static ArrayList<ControlStructures> Nc(ArrayList<String> lines, int WCondition, int WLoop, int WSwitch, int Case) {
+	public static ArrayList<ControlStructures> Nc(ArrayList<String> lines, int WCondition, int WLoop, int WSwitch,
+			int Case) {
 
 		// variable-1
 		String[] var;
@@ -41,8 +42,7 @@ public class CodeControlStructure {
 		int Wswitch = WSwitch;
 		// variable-11
 		int Wcase = Case;
-		
-		
+
 		// variable-12
 		int Ccs = 0;
 		// variable-13
@@ -107,19 +107,42 @@ public class CodeControlStructure {
 					Wtcs = Wtcs + Wloop;
 					WtcsList.put(i, Wtcs);
 
+					if (lines.get(i).contains("for")) {
+						var = lines.get(i).split("for");
+						NC = var.length;
+						HashNC.put(i, NC);
+					}
+					if (lines.get(i).contains("while")) {
+						var = lines.get(i).split("while");
+						NC = var.length;
+						HashNC.put(i, NC);
+					}
+					if (lines.get(i).contains("do")) {
+						var = lines.get(i).split("do");
+						NC = var.length;
+						HashNC.put(i, NC);
+					}
 				}
 
-				if (lines.get(i).contains("switch")) {
+				if (lines.get(i).contains("switch") && lines.get(i).contains("(")) {
 
 					Wtcs = Wtcs + Wswitch;
 					WtcsList.put(i, Wtcs);
 
+					var = lines.get(i).split("switch");
+					NC = var.length;
+					HashNC.put(i, NC);
+
 				}
 
-				if (lines.get(i).contains("case")) {
+				if (lines.get(i).contains("case") && lines.get(i).contains(":")) {
 
 					Wtcs = Wtcs + Wcase;
 					WtcsList.put(i, Wtcs);
+
+					var = lines.get(i).split("case");
+					NC = var.length;
+					HashNC.put(i, NC);
 
 				}
 
@@ -132,6 +155,7 @@ public class CodeControlStructure {
 		 * Ccspps list
 		 * 
 		 */
+		//if nested block
 		for (int j = 0; j < lines.size(); j++) {
 			if (lines.get(j).contains("System.out.println") || lines.get(j).contains("\\")
 					|| lines.get(j).startsWith("//") || (lines.get(j).startsWith("/*"))
@@ -163,14 +187,23 @@ public class CodeControlStructure {
 							CcsppCount = 0;
 							break;
 						}
-						/* System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n"); */
+						System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
 						// get Total for immediate line
 						/* if (WtcsList.containsKey(j2) == true) { */
-						System.out.println(WtcsList.get(j2) + " " + HashNC.get(j2));
+						/*
+						 * System.out.println(WtcsList.get(j2 - 1) + " " + HashNC.get(j2 + 1));
+						 * System.out.println(lines.get(j2 - 1) + lines.get(j2) + lines.get(j2 + 1));
+						 */
 						/*
 						 * } if (HashNC.containsKey(j) == true) {}
 						 */
-						CcsppCount = CcsppCount + WtcsList.get(j2) * HashNC.get(j2);
+						if (WtcsList.get(j2) == null && HashNC.get(j2) == null) {
+
+						} else {
+
+							CcsppCount = CcsppCount + WtcsList.get(j2) * HashNC.get(j2);
+
+						}
 						if (lines.get(j2 + 1).contains("if")) {
 
 							CcsppsList.put(j2 + 1, CcsppCount);
@@ -284,7 +317,6 @@ public class CodeControlStructure {
 		return ControlList;
 
 	}
-
 
 
 }

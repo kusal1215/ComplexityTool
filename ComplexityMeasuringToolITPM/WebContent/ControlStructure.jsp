@@ -89,7 +89,7 @@
 					<tr>
 
 						<td width="119"><%=NCList.get(i).getLineNo()%></td>
-						<td width="119"><%=NCList.get(i).getLine()%></td>
+						<td width="119"><%=NCList.get(i).getLine().replace("@@@", "\"")%></td>
 						<td width="119"><%=NCList.get(i).getWtcs()%></td>
 						<td width="119"><%=NCList.get(i).getNC()%></td>
 						<td width="119"><%=NCList.get(i).getCcspps()%></td>
