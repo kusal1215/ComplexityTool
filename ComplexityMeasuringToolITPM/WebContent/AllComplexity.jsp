@@ -59,7 +59,7 @@
 
      <section id="background" style="">
      <h1>Program Complexity</h1> 
-
+	<div id="table" style="overflow-x: auto;">
             <table class="table table-striped table-dark" style="margin-top: 40px;">
               <thead>
                   <tr>
@@ -118,6 +118,7 @@
                   </tr>
               </tfoot>
           </table>
+          </div>
         
     </section>  
     

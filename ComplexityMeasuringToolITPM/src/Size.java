@@ -177,7 +177,7 @@ public class Size {public static ArrayList<SizeComplexity> calcSize(ArrayList<St
                 }
              
                 //string
-                if (words[r].startsWith("\"")) {//words within double quotes seperately
+                if (words[r].startsWith("\"@@@")) {//words within double quotes seperately
                     if (!words[r + 1].equals("+")) {
                     	numofstring = numofstring + 1;
                     }
