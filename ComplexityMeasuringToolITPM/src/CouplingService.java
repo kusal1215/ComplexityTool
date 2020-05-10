@@ -97,7 +97,7 @@ public class CouplingService extends HttpServlet {
 		ArrayList<Coupling> couplingList = new ArrayList<Coupling>();
 		couplingList = CodeCoupling.Coupling(list);
 
-		ArrayList<Integer> CcpList = new ArrayList<Integer>();
+		ArrayList<Coupling> CcpList = new ArrayList<Coupling>();
 		CcpList = CodeCoupling.Ccp(list, WNr, WNmcms, WNmcmd, WNmcrms, WNmcrmd, WNrmcrms, WNrmcrmd, WNrmcms, WNrmcmd,
 				WNmrgvs, WNmrgvd, WNrmrgvs, WNrmrgvd);
 

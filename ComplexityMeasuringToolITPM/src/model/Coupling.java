@@ -24,6 +24,8 @@ public class Coupling {
 	private int Nmrgvd = 0;
 	private int Nrmrgvs = 0;
 	private int Nrmrgvd = 0;
+	private int Ccp = 0;
+	
 	/**
 	 * @return the line
 	 */
@@ -203,6 +205,18 @@ public class Coupling {
 	 */
 	public void setNrmrgvd(int nrmrgvd) {
 		Nrmrgvd = nrmrgvd;
+	}
+	/**
+	 * @return the ccp
+	 */
+	public int getCcp() {
+		return Ccp;
+	}
+	/**
+	 * @param ccp the ccp to set
+	 */
+	public void setCcp(int ccp) {
+		Ccp = ccp;
 	}
 	
 	
