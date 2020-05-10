@@ -93,9 +93,9 @@
 			 <td width="119"><%=list3.get(i).getComplexity()%></td>
 			 <td width="119"><%=list4.get(i).getCm()%></td>
 			 <td width="119"><%=list.get(i).getCi()%></td>
-			 <td width="119"><%=list5.get(i)%></td>
+			 <td width="119"><%=list5.get(i).getCcp()%></td>
 			 <td width="119"><%=list6.get(i).getCcs()%></td>
-			 <td width="119"><%=list.get(i).getCi() + list2.get(i).getCountComplexity() + list4.get(i).getCm() + list3.get(i).getComplexity() + list6.get(i).getCcs()%></td>
+			 <td width="119"><%=list.get(i).getCi() + list2.get(i).getCountComplexity() + list4.get(i).getCm() + list3.get(i).getComplexity() + list5.get(i).getCcp() + list6.get(i).getCcs()%></td>
 		</tr>
 
 		<%

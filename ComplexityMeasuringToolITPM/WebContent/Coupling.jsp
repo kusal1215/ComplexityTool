@@ -93,7 +93,7 @@
 						<td width="119"><%=couplingList.get(i).getNrmcrms()%></td>
 						<td width="119"><%=couplingList.get(i).getNrmcms()%></td>
 						<td width="119"><%=couplingList.get(i).getNrmrgvs()%></td>
-						<td width="119"><%=CcpList.get(i)%></td>
+						<td width="119"><%=CcpList.get(i).getCcp()%></td>
 					</tr>
 					<%
 						}

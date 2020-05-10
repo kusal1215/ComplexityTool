@@ -930,8 +930,8 @@ public class CodeCoupling {
 
 		return couplingList;
 	}
-
-	public static ArrayList<Integer> Ccp(ArrayList<String> lines, int WNr, int WNmcms, int WNmcmd, int WNmcrms,
+	
+	public static ArrayList<Coupling> Ccp(ArrayList<String> lines, int WNr, int WNmcms, int WNmcmd, int WNmcrms,
 			int WNmcrmd, int WNrmcrms, int WNrmcrmd, int WNrmcms, int WNrmcmd, int WNmrgvs, int WNmrgvd, int WNrmrgvs,
 			int WNrmrgvd) {
 
@@ -952,16 +952,22 @@ public class CodeCoupling {
 		int Wrmrgvs = WNrmrgvs;
 		int Wrmrgvd = WNrmrgvd;
 
-		ArrayList<Integer> CcpList = new ArrayList<Integer>();
+		ArrayList<Coupling> CcpList = new ArrayList<Coupling>();
 		ArrayList<Coupling> coupling = new ArrayList<Coupling>();
 		coupling = Coupling(lines);
 
 		for (int i = 0; i < lines.size(); i++) {
 
+			Coupling couplingObj = new Coupling();
+			
 			int Ccp = coupling.get(i).getNr() * Wr + coupling.get(i).getNmcms() * Wmcms
 					+ coupling.get(i).getNmcrms() * Wmcrms + coupling.get(i).getNrmcms() * Wrmcms
 					+ coupling.get(i).getNrmcrms() * Wrmcrms;
-			CcpList.add(Ccp);
+			
+			couplingObj.setCcp(Ccp);
+			
+			CcpList.add(couplingObj);
+			
 		}
 
 		return CcpList;
