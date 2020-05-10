@@ -53,8 +53,12 @@ public class codeContent extends HttpServlet {
 		String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
 		InputStream fileContent = filePart.getInputStream();
 
-		String value = ReadCode.getValue(filePart);
-
+		/* String value = ReadCode.getValue(filePart); */
+		
+		String values = ReadCode.getValue(filePart);
+		String value = values.replaceAll("\"", "@@@"); 
+		
+		
 		/*
 		 * 
 		 * 
