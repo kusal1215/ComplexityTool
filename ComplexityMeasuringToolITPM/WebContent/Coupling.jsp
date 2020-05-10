@@ -86,7 +86,7 @@
 
 					<tr>
 						<td width="119"><%=couplingList.get(i).getLineNo()%></td>
-						<td width="119"><%=couplingList.get(i).getLine()%></td>
+						<td width="119"><%=couplingList.get(i).getLine().replace("@@@", "\"")%></td>
 						<td width="119"><%=couplingList.get(i).getNr()%></td>
 						<td width="119"><%=couplingList.get(i).getNmcms()%></td>
 						<td width="119"><%=couplingList.get(i).getNmcrms()%></td>

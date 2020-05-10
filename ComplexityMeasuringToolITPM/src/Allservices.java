@@ -42,28 +42,53 @@ public class Allservices extends HttpServlet {
 		System.out.println(value);
 		System.out.println("xxxxxxxxxxxxxxxxxxx1111");
 		
+		//inheritance
 		int NoClass = 0;
 		int OneClass = 1;
 		int TwoClass = 2;
 		int ThreeClass = 3;
 		int MoreClass = 4;
 		
+		//size
 		int Keyword = 1;
 		int Identifer = 1;
 		int Operator = 1;
 		int Number = 1;
 		int Stringliteral = 1;
 		
+		//variable
 		int Globalvariable = 2;
 		int Localvariable = 1;
 		int Primitivedatatypevariable = 1;
 		int Compositedatatypevariable = 2;
 		
+		//method
 		int primitivereturntype = 1;
 		int compositereturntype = 2;
 		int voidreturntype = 0;
 		int Primitiveparameter = 1;
 		int Compositeparameter = 2;
+		
+		//coupling
+		int WNr = 2;
+		int WNmcms = 2;
+		int WNmcmd = 3;
+		int WNmcrms = 3;
+		int WNmcrmd = 4;
+		int WNrmcrms = 4;
+		int WNrmcrmd = 5;
+		int WNrmcms = 3;
+		int WNrmcmd = 4;
+		int WNmrgvs = 1;
+		int WNmrgvd = 2;
+		int WNrmrgvs = 1;
+		int WNrmrgvd = 2;
+		
+		//Control Structure
+		int WCondition = 2;
+		int WLoop = 3;
+		int WSwitch = 2;
+		int WCase = 1;
 		
 		String[] values = value.split("\\r?\\n");
 		ArrayList list = new ArrayList();
@@ -78,17 +103,24 @@ public class Allservices extends HttpServlet {
 		ArrayList<Integer> list2 = new ArrayList<Integer>();
 		ArrayList<Integer> list3 = new ArrayList<Integer>();
 		ArrayList<Integer> list4 = new ArrayList<Integer>();
+		ArrayList<Integer> list5 = new ArrayList<Integer>();
+		ArrayList<Integer> list6 = new ArrayList<Integer>();
 		
 		list1 = Inheritance.inheritanceCi(list,NoClass,OneClass,TwoClass,ThreeClass,MoreClass);
 		list2 = Size.calcSize(list, Keyword, Identifer, Operator, Number, Stringliteral);
 		list3 = Cv.variable(list, Globalvariable, Localvariable, Primitivedatatypevariable, Compositedatatypevariable);
 		list4 = Cm.MethodsCm(list, primitivereturntype, compositereturntype, voidreturntype, Primitiveparameter, Compositeparameter);
+		list5 = CodeCoupling.Ccp(list, WNr, WNmcms, WNmcmd, WNmcrms, WNmcrmd, WNrmcrms, WNrmcrmd, WNrmcms, WNrmcmd, WNmrgvs, WNmrgvd, WNrmrgvs, WNrmrgvd);
+		list6 = CodeControlStructure.Nc(list, WCondition, WLoop, WSwitch, WCase);
+		
 		
 		request.setAttribute("List", list1);
 		request.setAttribute("List2", list2);
 		request.setAttribute("List3", list3);
 		request.setAttribute("List4", list4);
-
+		request.setAttribute("List5", list5);
+		request.setAttribute("List6", list6);
+		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AllComplexity.jsp");
 		dispatcher.forward(request, response);
 	}

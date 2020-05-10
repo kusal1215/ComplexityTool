@@ -50,6 +50,8 @@
 		ArrayList<SizeComplexity> list2 = (ArrayList) request.getAttribute("List2");
 		ArrayList<VariableComplexity> list3 = (ArrayList) request.getAttribute("List3");
 		ArrayList<MethodsComplexity> list4 = (ArrayList) request.getAttribute("List4");
+		ArrayList<Coupling> list5 = (ArrayList) request.getAttribute("List5");
+		ArrayList<ControlStructures> list6 = (ArrayList) request.getAttribute("List6");
 		//ArrayList list2 = (ArrayList) request.getAttribute("List2");
 	%>
 
@@ -86,14 +88,14 @@
 		<tr>
 		
 			 <td width="119"><%=i+1%></td>
-			 <td width="119"><%=list2.get(i).getLine()%></td>
+			 <td width="119"><%=list2.get(i).getLine().replace("@@@", "\"")%></td>
 			 <td width="119"><%=list2.get(i).getCountComplexity()%></td>
 			 <td width="119"><%=list3.get(i).getComplexity()%></td>
 			 <td width="119"><%=list4.get(i).getCm()%></td>
 			 <td width="119"><%=list.get(i).getCi()%></td>
-			 <td width="119"></td>
-			 <td width="119"></td>
-			 <td width="119"><%=list.get(i).getCi() + list2.get(i).getCountComplexity() + list4.get(i).getCm() + list3.get(i).getComplexity()%></td>
+			 <td width="119"><%=list5.get(i)%></td>
+			 <td width="119"><%=list6.get(i).getCcs()%></td>
+			 <td width="119"><%=list.get(i).getCi() + list2.get(i).getCountComplexity() + list4.get(i).getCm() + list3.get(i).getComplexity() + list6.get(i).getCcs()%></td>
 		</tr>
 
 		<%
