@@ -81,7 +81,7 @@
 					<tr>
 
 						<td width="119"><%=i + 1%></td>
-						<td width="119"><%=list.get(i).getLine()%></td>
+						<td width="119"><%=list.get(i).getLine().replace("@@@", "\"")%></td>
 						<td width="119"><%=list.get(i).getWvs()%></td>
 						<td width="119"><%=list.get(i).getPrimitive_variable()%></td>
 						<td width="119"><%=list.get(i).getComposite_variable()%></td>
