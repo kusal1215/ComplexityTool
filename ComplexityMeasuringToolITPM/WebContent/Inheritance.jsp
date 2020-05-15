@@ -35,9 +35,9 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link"
-						href="ITPMHome/index.jsp">HOME</a></li>
-					<li class="nav-item"><a class="nav-link" href="UserPanel.jsp">USER
-							PANEL</a></li>
+						href="index.jsp">HOME</a></li>
+					<li class="nav-item"><a class="nav-link" href="CodeUpload.jsp">CODE
+							UPLOAD</a></li>
 					<li class="nav-item"><a class="nav-link" href="#services">SERVICES</a>
 					</li>
 					<li class="nav-item"><a class="nav-link " href="#contact">CONTACT</a>

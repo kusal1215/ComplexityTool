@@ -3,10 +3,10 @@
   <display-name>ComplexityMeasuringToolITPM</display-name>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>ITPMHome/index.jsp</welcome-file>
-    <welcome-file>ITPMHome/index.jsp</welcome-file>
-    <welcome-file>ITPMHome/index.jsp</welcome-file>
-    <welcome-file>ITPMHome/index.jsp</welcome-file>
-    <welcome-file>ITPMHome/index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

@@ -41,10 +41,10 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="#top">HOME</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="#about">ABOUT
-							US</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="index.jsp">HOME</a></li>
+					<li class="nav-item"><a class="nav-link" href="CodeUpload.jsp">CODE
+							UPLOAD</a></li>
 					<li class="nav-item"><a class="nav-link" href="#services">SERVICES</a>
 					</li>
 					<li class="nav-item"><a class="nav-link " href="#contact">CONTACT</a>
