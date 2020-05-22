@@ -70,26 +70,34 @@
                 <div class="col-md-6">
                 <h2 style=" font-family: 'Sofia';">About Us</h2>
                     <div class="about-content" style=" font-family: 'Sofia';  font-size: 20px;">
-                        Shangri-La Colombo is a 5-star hotel in Colombo, Sri Lanka. Owned by Shangri-La Hotels[citation needed], the property is part of the larger One Galle Face development project at the same location. It is the second Shangri-La hotel on the island (after Shangri-La's Hambantota Golf Resort & Spa) and the 101st hotel of the chain of Shangri-La Hotels world-wide.[5] The hotel was opened on 11 November 2017. The property has 500 rooms, and has room to accommodate up to 2,000 conference guests
+                        The Complexity measuring tool able to measure the complexity of programs written in both C++ and JAVA according to the factors Size, variables, methods, inheritance, control structure, and coupling. In addition, we can get the total complexity of a product according to the above factors and have a facility to add files located in the local that have file types .ccp, .java, Zip also copy-pastes the codes.  the desire of the complexity measuring tool is to ensure the accuracy and let the result made suggestions to build easy maintainable low-cost systems.
                     </div>
                     <button type="button" class="btn btn-primary" style=" font-family: 'Sofia';">Read more>></button>
                 </div>
                 <div class="col-md-6 skills-bar" style="margin-top:45px;">
-                    <p>Expe</p>
+                    <p>capacity of usage</p>
                         <div class="progress">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">25%</div>
+                          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 65%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">65%</div>
                         </div>
-                    <p>Expe</p>
+                    <p>Relevance and context</p>
                         <div class="progress">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">75%</div>
+                          <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 75%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">75%</div>
                         </div>
-                    <p>Expe</p>
+                    <p>Readability</p>
                         <div class="progress">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 55%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">55%</div>
+                          <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 70%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">70%</div>
                         </div>
-                    <p>Expe</p>
+                    <p>Expertise</p>
                         <div class="progress">
-                          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">80%</div>
+                          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 80%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">80%</div>
+                        </div>
+                      <p>user friendliness</p>
+                         <div class="progress">
+                          <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 60%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">60%</div>
+                        </div>
+                      <p>Code accurate</p>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 90%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">90%</div>
                         </div>
                 </div>
                 </div>
@@ -106,24 +114,24 @@
                         <div class="icon">
                             <i class="fa fa-terminal" aria-hidden="true"></i>
                         </div>
-                        <h3>Free WiFi</h3>
-                        <p>Get online throught the hotel with free standard WiFi during your stay.</p>
+                        <h3>File Upload</h3>
+                        <p>The specialty of adding files the user can add a verity of file types that contain the codes, for example, .cpp, .java, zip.</p>
                     </div>
                     
                     <div class="col-md-4 text center text-center">
                         <div class="icon">
                            <i class="fa fa-file-code-o" aria-hidden="true"></i>
                         </div>
-                        <h3>Earn Points</h3>
-                        <p>New Menbers earn 10 Points for eery $1 spent at our hotels.Plus,the more you stay,the more you earn--up to 20 Points per $1 spent.</p>
+                        <h3>Java Code</h3>
+                        <p>Give complexity of Java code according to Size, variable, method, Inheritance, Coupling and control structure.</p>
                     </div>
                     
                     <div class="col-md-4 text center text-center">
                         <div class="icon">
                             <i class="fa fa-code" aria-hidden="true"></i>
                         </div>
-                        <h3>Elite-level Benefits</h3>
-                        <p>Our elite members get access to Rollover Nights,Milestone Bonuses,free breakfast,and more.</p>
+                        <h3>C++ Code</h3>
+                        <p>Give complexity of C++ code according to Size, variable, method, Inheritance, Coupling and control structure.</p>
                     </div>
                     
                 </div>
@@ -156,7 +164,7 @@
                          
                         <div class="follow"><b>Phone:</b><i class="fa fa-phone" style="margin-left: 10px;"></i> (94) 11 788 8288</div>
                          
-                        <div class="follow"><b>Email:</b><i class="fa fa-envelope" style="margin-left: 10px;"></i> slcb@shangri-la.com</div>
+                        <div class="follow"><b>Email:</b><i class="fa fa-envelope" style="margin-left: 10px;"></i> slcb@codecomplexity.com</div>
                          
                         <div class="follow"><label><b>Get Social:</b></label><a href="#"><i class="fa fa-facebook" style="margin-left: 10px;"></i></a>
                         <a href="#"><i class="fa fa-youtube-play"></i></a>
